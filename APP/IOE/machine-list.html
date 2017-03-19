@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../../css/mui.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../../css/all.css" />
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<button id="return" type="button" class="mui-left mui-btn mui-btn-link mui-btn-nav mui-pull-left">
+					<span class="mui-icon mui-icon-left-nav"></span>
+			</button>
+			<h1 class="mui-center mui-title">设备列表</h1>
+
+			<button id="add" type="button" class="mui-right mui-btn mui-btn-link mui-btn-nav mui-pull-right">
+					<span class="mui-icon mui-icon-plusempty"></span>
+			</button>
+		</header>
+
+		<div class="mui-content">
+			<div style="padding: 10px 10px;">
+				<div id="segmentedControl" class="mui-segmented-control">
+					<a class="mui-control-item mui-active" id="creatBtn">
+						已创建
+					</a>
+					<a class="mui-control-item" id="bindBtn">
+						已绑定
+					</a>
+
+				</div>
+			</div>
+			<ul class="mui-table-view">
+
+			</ul>
+			<div class="mui-card">
+				<ul class="mui-table-view mui-table-view-chevron" id="machine_list">
+
+				</ul>
+			</div>
+		</div>
+
+		<script src="../../js/jquery-2.1.0.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/machine-list.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+
+</html>

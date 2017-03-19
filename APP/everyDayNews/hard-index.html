@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>赛灵开源技术研发社区</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/main.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/all.css" />
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<button id="return" type="button" class="mui-left mui-btn mui-btn-link mui-btn-nav mui-pull-left">
+					<span class="mui-icon mui-icon-left-nav"></span>
+			</button>
+			<h1 class="mui-center mui-title">硬件资讯</h1>
+
+		</header>
+
+		<div class="mui-content " >
+
+			<select class="mui-btn mui-btn-block  mui-table-view-cell mui-media  " style="color: #22aaaa; margin-bottom: 3px;" id="newsTypeSelect">
+				<option value="H-all">≡ 硬件资讯头条</option>
+				<option value="H-Eda">≡ 可编程逻辑器件</option>
+				<option value="H-Iot">≡ 物联网</option>
+				<option value="H-Base">≡ 基础电路</option>
+				<option value="H-Power">≡ 电源</option>
+				<option value="H-Measure">≡ 测量</option>
+				<option value="H-Communication">≡ 通讯</option>
+				<option value="H-Medical">≡ 医疗</option>
+				<option value="H-Traffic">≡ 交通</option>
+				<option value="H-Personal">≡ 个人产品</option>
+				<option value="H-Industry">≡ 工业应用</option>
+
+
+			</select>
+
+			<ul class="mui-table-view" id="lingji-cont">
+
+			</ul>
+		</div>
+
+	</body>
+
+	<script src="../../js/jquery-2.1.0.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/hard-index.js" type="text/javascript" charset="utf-8"></script>
+
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>Hello MUI</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<!--标准mui.css-->
+		<link rel="stylesheet" href="../../css/mui.min.css">
+
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<button id="return" type="button" class="mui-left mui-btn mui-btn-link mui-btn-nav mui-pull-left">
+					<span class="mui-icon mui-icon-left-nav"></span>
+			</button>
+
+			<button id="sortType" type="button" class="mui-left mui-btn mui-btn-link mui-btn-nav mui-pull-right">
+					按时间
+			</button>
+			<h1 class="mui-center mui-title">技术服务商</h1>
+
+		</header>
+
+		<div class="mui-content">
+
+			<select class="mui-btn mui-btn-block  mui-table-view-cell mui-media  " style="color: #22aaaa; margin-bottom: 3px;" id="wareClassSelect">
+				<option value="all">≡ 服务商汇总</option>
+				<option value="R-Cloud">≡ 云计算</option>
+				<option value="R-Iot">≡ 物联网</option>
+				<option value="R-API">≡ API</option>
+				<option value="R-Esd">≡ 嵌入式</option>
+				<option value="R-Bigdata">≡ 大数据</option>
+				<option value="R-Other">≡ 其他</option>
+			</select>
+
+			<ul class="mui-table-view" id="List" style="">
+
+			</ul>
+
+		</div>
+
+	</body>
+
+	<script src="../../js/jquery-2.1.0.js" type="text/javascript" charset="utf-8"></script>
+
+	<script src="js/server-main.js" type="text/javascript" charset="utf-8"></script>
+
+</html>

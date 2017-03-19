@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>Hello MUI</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<!--标准mui.css-->
+		<link rel="stylesheet" href="../../css/mui.min.css">
+
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<button id="return" type="button" class="mui-left mui-btn mui-btn-link mui-btn-nav mui-pull-left">
+					<span class="mui-icon mui-icon-left-nav"></span>
+			</button>
+			<h1 class="mui-center mui-title" id="title"></h1>
+
+		</header>
+		<div class="mui-content">
+
+			<div class="mui-card">
+				<div class="mui-card-header" style="color: #22aaaa;" id="wareWebName"></div>
+				<div id="wareImage">
+					<div class="mui-card-header mui-card-media" style="height:40vw;background-image:url(images/logo.png)"></div>
+				</div>
+				<div class="mui-card-content">
+					<div class="mui-card-content-inner " style="color: #22aaaa;" id="wareSynopsis">
+
+					</div>
+
+				</div>
+				<div class="mui-card-footer" >
+					<button class=""> <a class="mui-card-link" style="color: #22aaaa;"  id="indexUrl">主页</a></button>
+					<a class="mui-card-link" id="wareSiteMaster"></a>
+				</div>
+			</div>
+
+			<div class="mui-card">
+				<div class="mui-card-footer" >
+					<a class="mui-card-link" style="color: #22aaaa;" id="web">文章</a>
+					<a class="mui-card-link" style="color: #22aaaa;" id="tutorial">教程</a>
+					<a class="mui-card-link" style="color: #22aaaa;" id="document">文档</a>
+					<a class="mui-card-link" style="color: #22aaaa;" id="book">书籍</a>
+					<a class="mui-card-link" style="color: #22aaaa;" id="video">视频</a>
+					<a class="mui-card-link" style="color: #22aaaa;" id="ppt">PPT</a>
+					<a class="mui-card-link" style="color: #22aaaa;" id="file">文件</a>
+					<a class="mui-card-link" style="color: #22aaaa;" id="other">其他</a>
+				</div>
+				<hr />
+				<div class="" style="min-height: 250px;">
+					<ul class="mui-table-view" id="List">
+
+					</ul>
+				</div>
+
+				<div class="mui-content-padded">
+					<ul class="mui-pager">
+						<li id="top">
+							<a>
+								首页
+							</a>
+						</li>
+						<li id="next">
+							<a>
+								下页
+							</a>
+						</li>
+					</ul>
+				</div>
+                <div id="" style="margin-bottom: 20px;">
+                	
+                </div>
+			</div>
+
+		</div>
+
+	</body>
+
+	<script src="../../js/jquery-2.1.0.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/main-display.js" type="text/javascript" charset="utf-8"></script>
+
+</html>

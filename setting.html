@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+
+		<link rel="stylesheet" type="text/css" href="css/all.css" />
+
+		<style type="text/css">
+			.display {
+				display: none;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<button id="return" type="button" class="mui-left mui-btn mui-btn-link mui-btn-nav mui-pull-left">
+					<span class="mui-icon mui-icon-left-nav"></span>
+			</button>
+			<h1 class="mui-center mui-title" style="color: ;">设置</h1>
+		</header>
+
+		<div class="mui-content">
+
+			<ul class="mui-table-view mui-table-view-chevron display" id="userinfo">
+				<li class="mui-table-view-cell mui-media">
+					<a href="#account">
+						<img class="mui-media-object mui-pull-left head-img" id="head-img" src="images/logo.png">
+						<div class="mui-media-body">
+							爱好者
+							<p class="mui-ellipsis">账号:<span id="peopleWebName">
+								
+							</span></p>
+						</div>
+					</a>
+				</li>
+			</ul>
+
+			<ul class="mui-table-view mui-table-view-chevron display" id="login">
+				<li class="mui-table-view-cell">
+					<a id="tologin" style="color: dodgerblue;">登陆</a>
+				</li>
+			</ul>
+		</div>
+		<div class="" style="margin-top: 10px;">
+			<ul class="mui-table-view mui-table-view-chevron display" id="updateBtn">
+				<li class="mui-table-view-cell ">
+					<a class="" id="appUpdateUrl" style="color: #FF0000;">发现新版本<i class="mui-pull-right update" id="appVersionString"></i></a>
+				</li>
+			</ul>
+
+			<ul class="mui-table-view mui-table-view-chevron " id="updateBtn">
+				<li class="mui-table-view-cell ">
+					<a href="about.html" class="mui-navigate-right" >关于 赛灵深图 <i class="mui-pull-right update" id="updateBtn">V1.0.0</i></a>
+				</li>
+			</ul>
+
+			<ul class="mui-table-view display" id="exit">
+				<li class="mui-table-view-cell" style="text-align: center;">
+					<a class="" style="color: #FF0000;">退出登录</a>
+				</li>
+			</ul>
+		</div>
+
+	</body>
+	
+	<script src="js/jquery-2.1.0.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/setting.js" type="text/javascript" charset="utf-8"></script>
+
+</html>

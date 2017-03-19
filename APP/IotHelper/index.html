@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>赛灵开源技术研发社区</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/main.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/all.css" />
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<button id="return" type="button" class="mui-left mui-btn mui-btn-link mui-btn-nav mui-pull-left">
+					<span class="mui-icon mui-icon-left-nav"></span>
+			</button>
+			<h1 class="mui-center mui-title">WebSocket调试助手</h1>
+
+		</header>
+
+		<div class="mui-content" style="margin-bottom: 180px;">
+
+			<form class="mui-input-group">
+				<div class="mui-input-row">
+					<label>WS地址:</label>
+					<input type="text" id="wsAddress" value="121.42.182.188" placeholder="websocket IP address">
+				</div>
+				<div class="mui-input-row">
+					<label>WS端口:</label>
+					<input type="text" id="wsPort" value="8081" placeholder="websocket IP port">
+				</div>
+
+				<div class="mui-button-row">
+					<button type="button" id="wsconnect" class="mui-btn mui-btn-primary" onclick="return false;">连接</button>&nbsp;&nbsp;
+					<button type="button" id="wsclose" class="mui-btn mui-btn-danger" onclick="return false;">关闭</button>
+				</div>
+
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell">
+						<span>JSON 格式化处理</span>
+						<div class="mui-switch mui-active" id="jsoncontrol">
+							<div class="mui-switch-handle"></div>
+						</div>
+					</li>
+
+				</ul>
+
+			</form>
+			<div class="mui-input-row" style="margin: 10px 5px;">
+				<textarea id="receivetext" style="height: 300px;" placeholder="接收区"></textarea>
+			</div>
+		</div>
+		<nav class="mui-bar mui-bar-tab">
+
+			<div class="mui-input-row" style="margin: 10px 5px;">
+				<textarea id="sendtext" style="height: 100px; margin-bottom: 0px;" placeholder="发送区"></textarea>
+
+			</div>
+
+			<div class="mui-button-row" style="margin-top: -10px; margin-bottom: 20px;">
+				<button type="button" id="clearrec" class="mui-btn mui-btn-green" onclick="return false;">清空接收</button>
+				<button type="button" id="clearsend" class="mui-btn mui-btn-yellow" onclick="return false;">清空发送</button>
+				<button type="button" id="sendmsg" class="mui-btn mui-btn-primary" onclick="return false;">发送数据</button>
+
+			</div>
+
+		</nav>
+	</body>
+	
+	<script src="../../js/jquery-2.1.0.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/websocket.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/main.js" type="text/javascript" charset="utf-8"></script>
+
+</html>

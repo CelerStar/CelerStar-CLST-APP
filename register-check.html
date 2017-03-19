@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html class="ui-page-login">
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/mui.min.css" />
+
+		<style>
+			.area {
+				margin: 20px auto 0px auto;
+			}
+			
+			.mui-input-group:first-child {
+				margin-top: 20px;
+			}
+			
+			.mui-input-group label {
+				width: 22%;
+			}
+			
+			.mui-input-row label~input,
+			.mui-input-row label~select,
+			.mui-input-row label~textarea {
+				width: 78%;
+			}
+			
+			.mui-checkbox input[type=checkbox],
+			.mui-radio input[type=radio] {
+				top: 6px;
+			}
+			
+			.mui-content-padded {
+				margin-top: 25px;
+			}
+			
+			.mui-btn {
+				padding: 10px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">注册</h1>
+		</header>
+		<div class="mui-content">
+			<form class="mui-input-group" >
+
+				<div class="mui-input-row">
+					<label>验证</label>
+					<input id='peopleActivateNum' type="number" class="mui-input-clear mui-input" required="required" value="" placeholder="请输入激活码">
+				</div>
+
+
+			</form>
+				<div class="mui-content-padded">
+					<button type="submit" id='check' class="mui-btn mui-btn-block mui-btn-primary">激活账户</button>
+				</div>
+			<div class="mui-content-padded mui-text-center">
+				<p>(c) Copyright 2016 CelerStar. All Rights Reserved. </p>
+			</div>
+		</div>
+
+	</body>
+	<script src="js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/jquery-2.1.0.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/register-check.js" type="text/javascript" charset="utf-8"></script>
+
+</html>

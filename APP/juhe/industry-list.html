@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>Hello MUI</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<!--标准mui.css-->
+		<link rel="stylesheet" href="../../css/mui.min.css">
+
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<button id="return" type="button" class="mui-left mui-btn mui-btn-link mui-btn-nav mui-pull-left">
+					<span class="mui-icon mui-icon-left-nav"></span>
+			</button>
+
+
+			<button id="sortType" type="button" class="mui-left mui-btn mui-btn-link mui-btn-nav mui-pull-right">
+					按时间
+			</button>
+			<h1 class="mui-center mui-title">开源资料</h1>
+
+		</header>
+		<div class="mui-content">
+			<select class="mui-btn mui-btn-block  mui-table-view-cell mui-media  " style="color: #22aaaa; margin-bottom: 3px;" id="wareClassSelect">
+				<option value="all">≡ 开源资料汇总</option>
+				<option value="H-Eda">≡ 硬件 可编程逻辑器件</option>
+				<option value="H-Iot">≡ 硬件 物联网</option>
+				<option value="H-Base">≡ 硬件 基础电路</option>
+				<option value="H-Power">≡ 硬件 电源</option>
+				<option value="H-Measure">≡ 硬件 测量</option>
+				<option value="H-Communication">≡ 硬件 通讯</option>
+				<option value="H-Medical">≡ 硬件 医疗</option>
+				<option value="H-Traffic">≡ 硬件 交通</option>
+				<option value="H-Personal">≡ 硬件 个人产品</option>
+				<option value="H-Industry">≡ 硬件 工业应用</option>
+				<option value="S-Image">≡ 软件 图像</option>
+				<option value="S-Communication">≡ 软件 通讯</option>
+				<option value="S-Web">≡ 软件 Web</option>
+				<option value="S-Bigdata">≡ 软件 大数据</option>
+				<option value="S-Sql">≡ 软件 数据库</option>
+				<option value="S-Language">≡ 软件 语言</option>
+				<option value="S-Pc">≡ 软件 PC软件</option>
+				<option value="S-Phone">≡ 软件 移动端</option>
+				<option value="S-Game">≡ 软件 游戏</option>
+				<option value="S-Iot">≡ 软件 物联网</option>
+				<option value="S-Cloud">≡ 软件 云计算</option>
+
+			</select>
+
+			<ul class="mui-table-view" id="List">
+
+			</ul>
+
+		</div>
+
+	</body>
+
+	<script src="../../js/jquery-2.1.0.js" type="text/javascript" charset="utf-8"></script>
+
+	<script src="js/industry-main.js" type="text/javascript" charset="utf-8"></script>
+
+</html>
