@@ -18,7 +18,7 @@ var relwareTogetherTHotNum = function() {
 		"wareTogetherId": wareTogetherId,
 
 	};
-
+//ceshi
 	$.ajax({
 		type: "GET",
 		url: "http://api.celerstar.com/together/index.php",
