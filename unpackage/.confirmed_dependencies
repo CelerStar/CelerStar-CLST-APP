@@ -1,0 +1,101 @@
+{
+	"console.html": {
+		"resources": [
+			"fonts/mui-icons-extra.ttf",
+			"js/console.js",
+			"css/icons-extra.css"
+		]
+	},
+	"index.html": {
+		"resources": [
+			"console.html",
+			"fonts/mui.ttf",
+			"images/index.jpg",
+			"js/foot_nav.js",
+			"js/index.js"
+		],
+		"refer": [
+			"console.html"
+		]
+	},
+	"start.html": {
+		"resources": [
+			"images/start.jpg",
+			"index.html",
+			"css/mui.min.css",
+			"js/jquery-2.1.0.js",
+			"js/start.js",
+			"css/all.css"
+		],
+		"refer": [
+			"index.html"
+		]
+	},
+	"login.html": {
+		"resources": [
+			"js/mui.min.js",
+			"js/login.js",
+			"css/style.css",
+			"index.html"
+		],
+		"refer": [
+			"index.html"
+		]
+	},
+	"APP/IOE/machine-list.html": {
+		"resources": [
+			"APP/IOE/js/machine-list.js",
+			"login.html",
+			"APP/IOE/sensor-list.html",
+			"APP/IOE/main.html",
+			"fonts/mui.ttf",
+			"js/jquery-2.1.0.js",
+			"css/mui.css",
+			"css/all.css"
+		],
+		"refer": [
+			"login.html",
+			"APP/IOE/sensor-list.html",
+			"APP/IOE/main.html"
+		]
+	},
+	"APP/IOE/main.html": {
+		"resources": [
+			"APP/IOE/machine-list.html",
+			"APP/IOE/js/main.js",
+			"css/mui.css"
+		],
+		"refer": [
+			"APP/IOE/machine-list.html"
+		]
+	},
+	"APP/lingji/index.html": {
+		"resources": [
+			"APP/lingji/css/main.css",
+			"APP/lingji/js/Lingji.js"
+		]
+	},
+	"APP/IOE/sensor-list.html": {
+		"resources": [
+			"APP/IOE/js/sensor-list.js",
+			"fonts/mui.ttf",
+			"js/jquery-2.1.0.js",
+			"css/mui.css",
+			"css/all.css",
+			"APP/IOE/machine-list.html"
+		],
+		"refer": [
+			"APP/IOE/machine-list.html"
+		]
+	},
+	"aggregation.html": {
+		"resources": [
+			"js/aggregation.js"
+		]
+	},
+	"APP/juhe/soft-list.html": {
+		"resources": [
+			"APP/juhe/js/soft-main.js"
+		]
+	}
+}

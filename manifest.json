@@ -558,7 +558,11 @@
 					"login.html",
 					"APP/IOE/machine-send.html",
 					"APP/IOE/machine-add.html",
-					"APP/IOE/machine-bind.html"
+					"APP/IOE/machine-bind.html",
+					"APP/IOE/sensor-list.html",
+					"fonts/mui.ttf",
+					"js/jquery-2.1.0.js",
+					"css/all.css"
 				],
 				"refer": [],
 				"priority": 0
@@ -653,6 +657,18 @@
 					"css/mui.min.css",
 					"APP/IOE/js/channel-bind.js",
 					"APP/IOE/dch-list.html"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"APP/IOE/sensor-list.html": {
+				"resources": [
+					"APP/IOE/js/sensor-list.js",
+					"fonts/mui.ttf",
+					"js/jquery-2.1.0.js",
+					"css/mui.css",
+					"css/all.css",
+					"APP/IOE/machine-list.html"
 				],
 				"refer": [],
 				"priority": 0
