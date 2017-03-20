@@ -573,7 +573,8 @@
 					"css/mui.css",
 					"APP/IOE/main.html",
 					"APP/IOE/dch-bind.html",
-					"APP/IOE/channel-bind.html"
+					"APP/IOE/channel-bind.html",
+					"APP/IOE/dch-add.html"
 				],
 				"refer": [],
 				"priority": 0
@@ -636,7 +637,8 @@
 					"APP/IOE/js/channel-list.js",
 					"css/mui.css",
 					"APP/IOE/main.html",
-					"APP/IOE/channel-bind.html"
+					"APP/IOE/channel-bind.html",
+					"APP/IOE/channel-add.html"
 				],
 				"refer": [],
 				"priority": 0
@@ -668,7 +670,37 @@
 					"js/jquery-2.1.0.js",
 					"css/mui.css",
 					"css/all.css",
-					"APP/IOE/machine-list.html"
+					"APP/IOE/machine-list.html",
+					"APP/IOE/sensor-data.html"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"APP/IOE/sensor-data.html": {
+				"resources": [
+					"APP/IOE/js/sensor-data.js",
+					"APP/IOE/sensor-list.html",
+					"APP/IOE/js/echarts.min.js",
+					"fonts/mui.ttf",
+					"js/jquery-2.1.0.js",
+					"css/mui.css",
+					"css/all.css"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"APP/IOE/dch-add.html": {
+				"resources": [
+					"APP/IOE/dch-list.html",
+					"APP/IOE/js/dch-add.js"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"APP/IOE/channel-add.html": {
+				"resources": [
+					"APP/IOE/channel-list.html",
+					"APP/IOE/js/channel-add.js"
 				],
 				"refer": [],
 				"priority": 0

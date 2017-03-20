@@ -5,14 +5,16 @@ $("#return").click(function() {
 
 $("#add").click(function() {
 
-	if(selectState == "creat") {
+	if(localStorage.selectState == "creat") {
 		location.href = "dch-add.html";
 	} else {
 		location.href = "dch-bind.html";
 	}
 });
 
-var selectState = "creat";
+if(localStorage.selectState == null) {
+	localStorage.selectState = "creat";
+}
 
 var getCreatDch = function() {
 
@@ -146,16 +148,20 @@ var getBindDch = function() {
 	return false;
 }
 
-if(selectState == "creat") {
+if(localStorage.selectState == "creat") {
+	$("#creatBtn").addClass("mui-active");
+	$("#bindBtn").removeClass("mui-active");
 	getCreatDch();
 }
 
-if(selectState == "bind") {
+if(localStorage.selectState == "bind") {
+	$("#bindBtn").addClass("mui-active");
+	$("#creatBtn").removeClass("mui-active");
 	getBindDch();
 }
 
 $("#creatBtn").click(function() {
-	selectState = "creat";
+	localStorage.selectState = "creat";
 	$("#creatBtn").addClass("mui-active");
 	$("#bindBtn").removeClass("mui-active");
 	getCreatDch();
@@ -163,7 +169,7 @@ $("#creatBtn").click(function() {
 });
 
 $("#bindBtn").click(function() {
-	selectState = "bind";
+	localStorage.selectState = "bind";
 	$("#bindBtn").addClass("mui-active");
 	$("#creatBtn").removeClass("mui-active");
 	getBindDch();
@@ -193,11 +199,11 @@ var binDch = function(dchGroupIotPID, dchGroupIotPWD) {
 			if(data["INFO"] == "true") {
 				alert("绑定成功");
 
-				if(selectState == "creat") {
+				if(localStorage.selectState == "creat") {
 					getCreatDch();
 				}
 
-				if(selectState == "bind") {
+				if(localStorage.selectState == "bind") {
 					getBindDch();
 				}
 			}
@@ -232,11 +238,11 @@ var delDch = function(dchGroupIotPID) {
 			if(data["INFO"] == "true") {
 				alert("删除成功");
 
-				if(selectState == "creat") {
+				if(localStorage.selectState == "creat") {
 					getCreatDch();
 				}
 
-				if(selectState == "bind") {
+				if(localStorage.selectState == "bind") {
 					getBindDch();
 				}
 			}
@@ -271,11 +277,11 @@ var relDch = function(dchGroupIotPID) {
 			if(data["INFO"] == "true") {
 				alert("解绑成功");
 
-				if(selectState == "creat") {
+				if(localStorage.selectState == "creat") {
 					getCreatDch();
 				}
 
-				if(selectState == "bind") {
+				if(localStorage.selectState == "bind") {
 					getBindDch();
 				}
 			}

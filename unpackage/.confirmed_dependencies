@@ -3,7 +3,13 @@
 		"resources": [
 			"fonts/mui-icons-extra.ttf",
 			"js/console.js",
-			"css/icons-extra.css"
+			"css/icons-extra.css",
+			"aggregation.html",
+			"index.html"
+		],
+		"refer": [
+			"aggregation.html",
+			"index.html"
 		]
 	},
 	"index.html": {
@@ -12,7 +18,10 @@
 			"fonts/mui.ttf",
 			"images/index.jpg",
 			"js/foot_nav.js",
-			"js/index.js"
+			"js/index.js",
+			"css/mui.min.css",
+			"js/jquery-2.1.0.js",
+			"css/all.css"
 		],
 		"refer": [
 			"console.html"
@@ -51,29 +60,40 @@
 			"fonts/mui.ttf",
 			"js/jquery-2.1.0.js",
 			"css/mui.css",
-			"css/all.css"
+			"css/all.css",
+			"APP/IOE/machine-bind.html",
+			"APP/IOE/machine-add.html",
+			"APP/IOE/machine-send.html"
 		],
 		"refer": [
 			"login.html",
 			"APP/IOE/sensor-list.html",
-			"APP/IOE/main.html"
+			"APP/IOE/main.html",
+			"APP/IOE/machine-bind.html",
+			"APP/IOE/machine-add.html",
+			"APP/IOE/machine-send.html"
 		]
 	},
 	"APP/IOE/main.html": {
 		"resources": [
 			"APP/IOE/machine-list.html",
 			"APP/IOE/js/main.js",
-			"css/mui.css"
+			"css/mui.css",
+			"APP/IOE/channel-list.html",
+			"APP/IOE/dch-list.html"
 		],
 		"refer": [
-			"APP/IOE/machine-list.html"
+			"APP/IOE/machine-list.html",
+			"APP/IOE/channel-list.html",
+			"APP/IOE/dch-list.html"
 		]
 	},
 	"APP/lingji/index.html": {
 		"resources": [
 			"APP/lingji/css/main.css",
 			"APP/lingji/js/Lingji.js"
-		]
+		],
+		"refer": []
 	},
 	"APP/IOE/sensor-list.html": {
 		"resources": [
@@ -82,20 +102,173 @@
 			"js/jquery-2.1.0.js",
 			"css/mui.css",
 			"css/all.css",
+			"APP/IOE/machine-list.html",
+			"APP/IOE/sensor-data.html"
+		],
+		"refer": [
+			"APP/IOE/machine-list.html",
+			"APP/IOE/sensor-data.html"
+		]
+	},
+	"aggregation.html": {
+		"resources": [
+			"js/aggregation.js",
+			"console.html",
+			"setting.html",
+			"index.html"
+		],
+		"refer": [
+			"console.html",
+			"setting.html",
+			"index.html"
+		]
+	},
+	"APP/juhe/soft-list.html": {
+		"resources": [
+			"APP/juhe/js/soft-main.js"
+		],
+		"refer": []
+	},
+	"APP/IOE/channel-list.html": {
+		"resources": [
+			"APP/IOE/js/channel-list.js",
+			"APP/IOE/main.html",
+			"APP/IOE/channel-bind.html",
+			"APP/IOE/channel-add.html"
+		],
+		"refer": [
+			"APP/IOE/main.html",
+			"APP/IOE/channel-bind.html",
+			"APP/IOE/channel-add.html"
+		]
+	},
+	"APP/IOE/dch-list.html": {
+		"resources": [
+			"APP/IOE/js/dch-list.js",
+			"APP/IOE/main.html",
+			"APP/IOE/dch-add.html",
+			"APP/IOE/dch-bind.html"
+		],
+		"refer": [
+			"APP/IOE/main.html",
+			"APP/IOE/dch-add.html",
+			"APP/IOE/dch-bind.html"
+		]
+	},
+	"APP/juhe/hard-list.html": {
+		"resources": [
+			"APP/juhe/js/hard-main.js"
+		],
+		"refer": []
+	},
+	"APP/everyDayNews/index.html": {
+		"resources": [
+			"APP/everyDayNews/js/index.js",
+			"APP/everyDayNews/css/main.css"
+		],
+		"refer": []
+	},
+	"APP/IOE/machine-bind.html": {
+		"resources": [
+			"APP/IOE/js/machine-bind.js",
+			"css/mui.min.css",
 			"APP/IOE/machine-list.html"
 		],
 		"refer": [
 			"APP/IOE/machine-list.html"
 		]
 	},
-	"aggregation.html": {
+	"APP/IOE/machine-add.html": {
 		"resources": [
-			"js/aggregation.js"
+			"APP/IOE/js/machine-add.js",
+			"APP/IOE/machine-list.html"
+		],
+		"refer": [
+			"APP/IOE/machine-list.html"
 		]
 	},
-	"APP/juhe/soft-list.html": {
+	"APP/IOE/sensor-data.html": {
 		"resources": [
-			"APP/juhe/js/soft-main.js"
+			"APP/IOE/js/sensor-data.js",
+			"APP/IOE/sensor-list.html",
+			"APP/IOE/js/echarts.min.js",
+			"fonts/mui.ttf",
+			"js/jquery-2.1.0.js",
+			"css/mui.css",
+			"css/all.css"
+		],
+		"refer": [
+			"APP/IOE/sensor-list.html"
+		]
+	},
+	"APP/IOE/machine-send.html": {
+		"resources": [
+			"APP/IOE/js/machine-send.js",
+			"APP/IOE/machine-list.html"
+		],
+		"refer": [
+			"APP/IOE/machine-list.html"
+		]
+	},
+	"APP/IOE/dch-add.html": {
+		"resources": [
+			"APP/IOE/dch-list.html",
+			"APP/IOE/js/dch-add.js"
+		],
+		"refer": [
+			"APP/IOE/dch-list.html"
+		]
+	},
+	"APP/IOE/dch-bind.html": {
+		"resources": [
+			"APP/IOE/dch-list.html",
+			"APP/IOE/js/dch-bind.js"
+		],
+		"refer": [
+			"APP/IOE/dch-list.html"
+		]
+	},
+	"APP/IOE/channel-bind.html": {
+		"resources": [
+			"APP/IOE/channel-list.html",
+			"APP/IOE/js/channel-bind.js"
+		],
+		"refer": [
+			"APP/IOE/channel-list.html"
+		]
+	},
+	"APP/IOE/channel-add.html": {
+		"resources": [
+			"APP/IOE/channel-list.html",
+			"APP/IOE/js/channel-add.js"
+		],
+		"refer": [
+			"APP/IOE/channel-list.html"
+		]
+	},
+	"setting.html": {
+		"resources": [
+			"js/setting.js",
+			"images/logo.png",
+			"aggregation.html"
+		],
+		"refer": [
+			"aggregation.html"
+		]
+	},
+	"APP/everyDayNews/hard-index.html": {
+		"resources": [
+			"APP/everyDayNews/js/hard-index.js"
+		]
+	},
+	"APP/juhe/industry-list.html": {
+		"resources": [
+			"APP/juhe/js/industry-main.js"
+		]
+	},
+	"APP/everyDayNews/soft-index.html": {
+		"resources": [
+			"APP/everyDayNews/js/soft-index.js"
 		]
 	}
 }

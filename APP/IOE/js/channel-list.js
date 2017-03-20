@@ -3,18 +3,18 @@ $("#return").click(function() {
 	history.back();
 });
 
-
 $("#add").click(function() {
 
-	if(selectState == "creat") {
+	if(localStorage.selectState == "creat") {
 		location.href = "channel-add.html";
 	} else {
 		location.href = "channel-bind.html";
 	}
 });
 
-
-var selectState = "creat";
+if(localStorage.selectState == null) {
+	localStorage.selectState = "creat";
+}
 
 var getCreatChannel = function() {
 
@@ -76,7 +76,7 @@ var getCreatChannel = function() {
 		},
 
 		error: function() {
-			
+
 		}
 
 	});
@@ -113,7 +113,7 @@ var getBindChannel = function() {
 					var channelIotBindState = data["LIST"][p].channelIotBindState;
 					var businessIotBID = data["LIST"][p].businessIotBID;
 					var peopleWebName = data["LIST"][p].peopleWebName;
-					
+
 					$("#channel_list").append('<li class="mui-table-view-cell mui-collapse mui-table-view-cell mui-collapse "><a class="mui-navigate-right">' + channelWebName + '</a><ul class="mui-table-view mui-table-view-chevron"><li class="mui-table-view-cell"><a class="">通讯ID <span  style="color: #FF0000;">' + channelIotPID + '</span></a></li><li class="mui-table-view-cell"><a class="">应用ID <span  style="color: #FF0000;">' + businessIotBID + '</span></a></li><li class="mui-table-view-cell"><a class="">通讯密码 <span  style="color: #FF0000;">' + channelIotPWD + '</span></a></li><li class="mui-table-view-cell"><div class="mui-button-row"><a type="button"class="mui-btn mui-btn-danger" onclick=\'relChannel("' + channelIotPID + '") \' >解绑</a></div></li></ul></li>');
 
 				}
@@ -138,7 +138,7 @@ var getBindChannel = function() {
 		},
 
 		error: function() {
-			
+
 		}
 
 	});
@@ -146,16 +146,20 @@ var getBindChannel = function() {
 	return false;
 }
 
-if(selectState == "creat") {
+if(localStorage.selectState == "creat") {
+	$("#creatBtn").addClass("mui-active");
+	$("#bindBtn").removeClass("mui-active");
 	getCreatChannel();
 }
 
-if(selectState == "bind") {
+if(localStorage.selectState == "bind") {
+	$("#bindBtn").addClass("mui-active");
+	$("#creatBtn").removeClass("mui-active");
 	getBindChannel();
 }
 
 $("#creatBtn").click(function() {
-	selectState = "creat";
+	localStorage.selectState = "creat";
 	$("#creatBtn").addClass("mui-active");
 	$("#bindBtn").removeClass("mui-active");
 	getCreatChannel();
@@ -163,7 +167,7 @@ $("#creatBtn").click(function() {
 });
 
 $("#bindBtn").click(function() {
-	selectState = "bind";
+	localStorage.selectState = "bind";
 	$("#bindBtn").addClass("mui-active");
 	$("#creatBtn").removeClass("mui-active");
 	getBindChannel();
@@ -193,11 +197,11 @@ var binChannel = function(channelIotPID, channelIotPWD) {
 			if(data["INFO"] == "true") {
 				alert("绑定成功");
 
-				if(selectState == "creat") {
+				if(localStorage.selectState == "creat") {
 					getCreatChannel();
 				}
 
-				if(selectState == "bind") {
+				if(localStorage.selectState == "bind") {
 					getBindChannel();
 				}
 			}
@@ -232,11 +236,11 @@ var delChannel = function(channelIotPID) {
 			if(data["INFO"] == "true") {
 				alert("删除成功");
 
-				if(selectState == "creat") {
+				if(localStorage.selectState == "creat") {
 					getCreatChannel();
 				}
 
-				if(selectState == "bind") {
+				if(localStorage.selectState == "bind") {
 					getBindChannel();
 				}
 			}
@@ -271,11 +275,11 @@ var relChannel = function(channelIotPID) {
 			if(data["INFO"] == "true") {
 				alert("解绑成功");
 
-				if(selectState == "creat") {
+				if(localStorage.selectState == "creat") {
 					getCreatChannel();
 				}
 
-				if(selectState == "bind") {
+				if(localStorage.selectState == "bind") {
 					getBindChannel();
 				}
 			}

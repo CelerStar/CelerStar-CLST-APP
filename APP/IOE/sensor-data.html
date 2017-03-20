@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../../css/mui.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../../css/all.css" />
+
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<button id="return" type="button" class="mui-left mui-btn mui-btn-link mui-btn-nav mui-pull-left">
+					<span class="mui-icon mui-icon-left-nav"></span>
+			</button>
+			<h1 class="mui-center mui-title">设备节点数据</h1>
+
+		</header>
+
+		<div class="mui-content">
+
+			<div class="mui-card">
+				<div class="mui-card-header" id="mSensorWebName"></div>
+				<div class="mui-card-content" style="margin-left: 15px;">
+					<div class="" style="margin-top: 5px;">
+						节点类别：<span id="mSensorIotTYP"></span>
+					</div>
+
+					<div class="">
+						数据类别：<span id="mSensorIotDataTYP"></span>
+					</div>
+
+					<div class="">
+						更新时间：<span id="changeTime">2017-01-01 00:00:00</span>
+					</div>
+					<div class="">
+						查询次数：<span id="changeNum">0</span>
+					</div>
+				</div>
+
+			</div>
+			<div class="mui-card">
+				<div class="mui-col-12" id="text" style="height: 250px; display: none;">
+					<div class="" id="textInfo" style="margin: 10px;">
+
+					</div>
+				</div>
+
+				<div class="mui-col-12" id="value" style="height: 250px; display: none; ">
+
+				</div>
+
+				<div class="mui-col-12 " id="switch" style="height: 250px;  display: none;">
+					<div class="" style="height: 100px;">
+					</div>
+
+					<table style="margin-left: auto; margin-right: auto;">
+						<tr>
+							<th>
+								<div id="state" class="mui-switch ">
+									<div class="mui-switch-handle"></div>
+								</div>
+							</th>
+						</tr>
+
+					</table>
+
+				</div>
+
+				<div class="mui-col-12" id="gps" style="height: 250px; display: none;">
+
+				</div>
+			</div>
+		</div>
+
+		<script src="../../js/jquery-2.1.0.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/echarts.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="http://api.map.baidu.com/api?v=2.0&ak=0ycCmchInqcP4j6EdjSPOoPhXbkxl0MG"></script>
+		<script src="js/sensor-data.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+
+</html>
