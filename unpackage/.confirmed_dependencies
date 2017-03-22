@@ -270,5 +270,11 @@
 		"resources": [
 			"APP/everyDayNews/js/soft-index.js"
 		]
+	},
+	"APP/IotHelper/index.html": {
+		"resources": [
+			"APP/IotHelper/js/main.js",
+			"APP/IotHelper/js/websocket.js"
+		]
 	}
 }
