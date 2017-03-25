@@ -24,6 +24,9 @@ var ajax_str = function(string) {
 				localStorage.peopleWebPWD = peopleWebPWD;
 
 				location.href = "index.html";
+			}else
+			{
+				alert("没有账户或者信息错误");
 			}
 
 		},
