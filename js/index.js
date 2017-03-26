@@ -488,12 +488,14 @@ var inqappInfo = function() {
 				var appVersionString = data["NOTE"]["appVersionString"];
 				var appIndexImageUrl = data["NOTE"]["appIndexImageUrl"];
 				var appIndexTitle = data["NOTE"]["appIndexTitle"];
+				var appIndexMusicUrl = data["NOTE"]["appIndexMusicUrl"];
 				var appViewCount = data["NOTE"]["appViewCount"];
 				var appUpdateInfo = data["NOTE"]["appUpdateInfo"];
 				var appUpdateUrl = data["NOTE"]["appUpdateUrl"];
 				var appUpdateEnable = data["NOTE"]["appUpdateEnable"];
 				localStorage.appIndexImageUrl = appIndexImageUrl;
 				localStorage.appIndexTitle = appIndexTitle;
+				localStorage.appIndexMusicUrl = appIndexMusicUrl;
 
 			} else {}
 
@@ -543,11 +545,11 @@ var upAppViewCount = function() {
 if(localStorage.appIndexImageUrl != null) {
 
 	$("#indexNav").append('<div class="mui-card-header mui-card-media" style="height:50vw;background-image:url(' + localStorage.appIndexImageUrl + ')"></div><div class="mui-card-content"><div class="mui-card-content-inner"><div class="mui-text-center"><h4 >' + localStorage.appIndexTitle + '</h4></div></div></div>');
-
+    $("#music").attr("src", localStorage.appIndexMusicUrl);
 } else {
 
 	$("#indexNav").append('<div class="mui-card-header mui-card-media" style="height:50vw;background-image:url(images/index.jpg)"></div><div class="mui-card-content"><div class="mui-card-content-inner"><div class="mui-text-center"><h4 >开放 分享 艺术 创造</h4></div></div></div>');
-
+     $("#music").attr("src", '//music.163.com/outchain/player?type=3&id=16268029&auto=0&height=66');
 }
 inqappInfo();
 

@@ -27,6 +27,7 @@ var inqappInfo = function() {
 				localStorage.appStartImageUrl = appStartImageUrl;
 				localStorage.appStartTitle = appStartTitle;
 
+
 			} else {}
 
 		},
