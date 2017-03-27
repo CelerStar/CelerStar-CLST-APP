@@ -549,7 +549,7 @@ if(localStorage.appIndexImageUrl != null) {
 } else {
 
 	$("#indexNav").append('<div class="mui-card-header mui-card-media" style="height:50vw;background-image:url(images/index.jpg)"></div><div class="mui-card-content"><div class="mui-card-content-inner"><div class="mui-text-center"><h4 >开放 分享 艺术 创造</h4></div></div></div>');
-     $("#music").attr("src", '//music.163.com/outchain/player?type=3&id=16268029&auto=0&height=66');
+     $("#music").attr("src", 'http://music.163.com/outchain/player?type=3&id=16268029&auto=0&height=66');
 }
 inqappInfo();
 
