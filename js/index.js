@@ -458,56 +458,6 @@ var getOpenHotInfo = function() {
 	});
 }
 
-var inqappInfo = function() {
-
-	var message = {
-		"LINK": "app",
-		"ISTR": "inq",
-		"CONT": "appInfo",
-		"appIotAID": "0000000100000001",
-	};
-
-	$.ajax({
-
-		type: "GET",
-		url: "https://api.celerstar.com/APP/index.php",
-
-		data: message,
-		timeout: 3000,
-		dataType: 'JSONP',
-		jsonp: "callback", //传递给请求处理程序或页面的，用以获得jsonp回调函数名的参数名(默认为:callback)
-
-		success: function(data) {
-
-			if(data["INFO"] == "true") {
-				//	alert(JSON.stringify(data));
-				var appWebName = data["NOTE"]["appWebName"];
-				var appIotAID = data["NOTE"]["appIotAID"];
-				var businessIotBID = data["NOTE"]["businessIotBID"];
-				var appVersionNum = data["NOTE"]["appVersionNum"];
-				var appVersionString = data["NOTE"]["appVersionString"];
-				var appIndexImageUrl = data["NOTE"]["appIndexImageUrl"];
-				var appIndexTitle = data["NOTE"]["appIndexTitle"];
-				var appIndexMusicUrl = data["NOTE"]["appIndexMusicUrl"];
-				var appViewCount = data["NOTE"]["appViewCount"];
-				var appUpdateInfo = data["NOTE"]["appUpdateInfo"];
-				var appUpdateUrl = data["NOTE"]["appUpdateUrl"];
-				var appUpdateEnable = data["NOTE"]["appUpdateEnable"];
-				localStorage.appIndexImageUrl = appIndexImageUrl;
-				localStorage.appIndexTitle = appIndexTitle;
-				localStorage.appIndexMusicUrl = appIndexMusicUrl;
-
-			} else {}
-
-		},
-
-		error: function() {}
-
-	});
-
-	return false;
-}
-
 var upAppViewCount = function() {
 
 	var message = {
@@ -545,13 +495,12 @@ var upAppViewCount = function() {
 if(localStorage.appIndexImageUrl != null) {
 
 	$("#indexNav").append('<div class="mui-card-header mui-card-media" style="height:50vw;background-image:url(' + localStorage.appIndexImageUrl + ')"></div><div class="mui-card-content"><div class="mui-card-content-inner"><div class="mui-text-center"><h4 >' + localStorage.appIndexTitle + '</h4></div></div></div>');
-    $("#music").attr("src", localStorage.appIndexMusicUrl);
+
 } else {
 
 	$("#indexNav").append('<div class="mui-card-header mui-card-media" style="height:50vw;background-image:url(images/index.jpg)"></div><div class="mui-card-content"><div class="mui-card-content-inner"><div class="mui-text-center"><h4 >开放 分享 艺术 创造</h4></div></div></div>');
-     $("#music").attr("src", 'http://music.163.com/outchain/player?type=3&id=16268029&auto=0&height=66');
+
 }
-inqappInfo();
 
 upAppViewCount();
 getHardNews();

@@ -34,3 +34,8 @@ $("#server").click(function() {
 
 	location.href = "APP/juhe/server-list.html";
 });
+
+$("#music").click(function() {
+
+	location.href = "APP/music/index.html";
+});

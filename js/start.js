@@ -23,7 +23,21 @@ var inqappInfo = function() {
 
 				var appStartImageUrl = data["NOTE"]["appStartImageUrl"];
 				var appStartTitle = data["NOTE"]["appStartTitle"];
-
+				var appWebName = data["NOTE"]["appWebName"];
+				var appIotAID = data["NOTE"]["appIotAID"];
+				var businessIotBID = data["NOTE"]["businessIotBID"];
+				var appVersionNum = data["NOTE"]["appVersionNum"];
+				var appVersionString = data["NOTE"]["appVersionString"];
+				var appIndexImageUrl = data["NOTE"]["appIndexImageUrl"];
+				var appIndexTitle = data["NOTE"]["appIndexTitle"];
+				var appIndexMusicUrl = data["NOTE"]["appIndexMusicUrl"];
+				var appViewCount = data["NOTE"]["appViewCount"];
+				var appUpdateInfo = data["NOTE"]["appUpdateInfo"];
+				var appUpdateUrl = data["NOTE"]["appUpdateUrl"];
+				var appUpdateEnable = data["NOTE"]["appUpdateEnable"];
+				localStorage.appIndexImageUrl = appIndexImageUrl;
+				localStorage.appIndexTitle = appIndexTitle;
+				localStorage.appIndexMusicUrl = appIndexMusicUrl;
 				localStorage.appStartImageUrl = appStartImageUrl;
 				localStorage.appStartTitle = appStartTitle;
 

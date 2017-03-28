@@ -704,6 +704,13 @@
 				],
 				"refer": [],
 				"priority": 0
+			},
+			"APP/music/index.html": {
+				"resources": [
+					"APP/music/js/index.js"
+				],
+				"refer": [],
+				"priority": 0
 			}
 		},
 		"idle": {

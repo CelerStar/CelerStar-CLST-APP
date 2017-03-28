@@ -22,7 +22,8 @@
       "css/mui.min.css",
       "js/jquery-2.1.0.js",
       "css/all.css",
-      "APP/everyDayNews/newsView.html"
+      "APP/everyDayNews/newsView.html",
+      "aggregation.html"
     ],
     "refer": [
       "console.html",
@@ -120,7 +121,9 @@
       "js/aggregation.js",
       "console.html",
       "setting.html",
-      "index.html"
+      "index.html",
+      "fonts/mui-icons-extra.ttf",
+      "css/icons-extra.css"
     ],
     "refer": [
       "console.html",
@@ -270,23 +273,27 @@
   "APP/everyDayNews/hard-index.html": {
     "resources": [
       "APP/everyDayNews/js/hard-index.js"
-    ]
+    ],
+    "refer": []
   },
   "APP/juhe/industry-list.html": {
     "resources": [
       "APP/juhe/js/industry-main.js"
-    ]
+    ],
+    "refer": []
   },
   "APP/everyDayNews/soft-index.html": {
     "resources": [
       "APP/everyDayNews/js/soft-index.js"
-    ]
+    ],
+    "refer": []
   },
   "APP/IotHelper/index.html": {
     "resources": [
       "APP/IotHelper/js/main.js",
       "APP/IotHelper/js/websocket.js"
-    ]
+    ],
+    "refer": []
   },
   "APP/everyDayNews/newsView.html": {
     "resources": [
@@ -297,5 +304,23 @@
     "refer": [
       "index.html"
     ]
+  },
+  "APP/juhe/server-list.html": {
+    "resources": [
+      "APP/juhe/js/server-main.js"
+    ],
+    "refer": []
+  },
+  "APP/music/index.html": {
+    "resources": [
+      "APP/music/js/index.js"
+    ],
+    "refer": []
+  },
+  "APP/juhe/team-list.html": {
+    "resources": [
+      "APP/juhe/js/team-main.js"
+    ],
+    "refer": []
   }
 }
