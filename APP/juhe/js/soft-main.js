@@ -156,7 +156,7 @@ $(window).scroll(function() {
 	}
 	if($(document).scrollTop() >= $(document).height() - $(window).height()) {
 		Page = Page + 1;
-
+alert("滚动条已经到达底部为0");
 		get_List_info();
 	}
 });

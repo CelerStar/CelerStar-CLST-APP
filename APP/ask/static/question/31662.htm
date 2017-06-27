@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+<meta name="renderer" content="webkit" />
+<title>C# Winformä¸­æ— ç„¦ç‚¹çŠ¶æ€ä¸‹è·å–é”®ç›˜è¾“å…¥æˆ–è€…USBæ‰«ææªæ•°æ® - WeCenter ç¤¾äº¤åŒ–é—®ç­”ç¤¾åŒºç¨‹åº</title>
+<meta name="keywords" content="c#,winform,æ— ç„¦ç‚¹,çŠ¶æ€,è·å–,é”®ç›˜,è¾“å…¥,usb,æ‰«æ,æ•°æ®" />
+<meta name="description" content="C# Winformä¸­æ— ç„¦ç‚¹çŠ¶æ€ä¸‹è·å–é”®ç›˜è¾“å…¥æˆ–è€…USBæ‰«ææªæ•°æ® - æœ€è¿‘åœ¨åšä¸ªå›½å¤–å¾ˆç«çš„é¡¹ç›®ï¼Œç¢°åˆ°ä¸€äº›é—®é¢˜ï¼Œä¸‹é¢çš„ä»£ç è€æ˜¯æŠ¥é”™ï¼Œå“ªä½æœ‰ç»éªŒçš„å¤§ç¥å¸®æˆ‘çœ‹çœ‹~
+æ‰«æå™¨æ˜¯ä¼˜åŠ›ç§‘çš„MS3398ä¸‹é¢æ˜¯æ‰«æå™¨çš„å‚æ•°API
+
+
+	
+
+
+using System;
+using System.Collections.Generic;
+usi..."  />
+<xbasehref="http://wenda.wecenter.com/" /><!--[if IE]></base><![endif]-->
+<link href="http://wenda.wecenter.com/static/css/default/img/favicon.ico?v=20160523" rel="shortcut icon" type="image/x-icon" />
+
+<link rel="stylesheet" type="text/css" href="../static/css/bootstrap.css" tppabs="http://wenda.wecenter.com/static/css/bootstrap.css" />
+<link rel="stylesheet" type="text/css" href="../static/css/icon.css" tppabs="http://wenda.wecenter.com/static/css/icon.css" />
+
+<link href="../static/css/default/common.css-v=20160523.css" tppabs="http://wenda.wecenter.com/static/css/default/common.css?v=20160523" rel="stylesheet" type="text/css" />
+<link href="../static/css/default/link.css-v=20160523.css" tppabs="http://wenda.wecenter.com/static/css/default/link.css?v=20160523" rel="stylesheet" type="text/css" />
+<link href="../static/js/plug_module/style.css-v=20160523.css" tppabs="http://wenda.wecenter.com/static/js/plug_module/style.css?v=20160523" rel="stylesheet" type="text/css" />
+
+
+<script type="text/javascript">
+	var _AADA1927103EE12F2A025435031DD165="";
+	var G_POST_HASH=_AADA1927103EE12F2A025435031DD165;
+	var G_INDEX_SCRIPT = "";
+	var G_SITE_NAME = "WeCenter ç¤¾äº¤åŒ–é—®ç­”ç¤¾åŒºç¨‹åº";
+	var G_BASE_URL = "../index.htm"/*tpa=http://wenda.wecenter.com/*/;
+	var G_STATIC_URL = "http://wenda.wecenter.com/static/";
+	var G_UPLOAD_URL = "http://wenda.wecenter.com/uploads/";
+	var G_USER_ID = "";
+	var G_USER_NAME = "";
+	var G_UPLOAD_ENABLE = "N";
+	var G_UNREAD_NOTIFICATION = 0;
+	var G_NOTIFICATION_INTERVAL = 100000;
+	var G_CAN_CREATE_TOPIC = "";
+	var G_ADVANCED_EDITOR_ENABLE = "Y";
+	var FILE_TYPES = "jpg,jpeg,png,zip,rar,7z";
+
+
+	</script>
+<script src="../static/js/jquery.2.js-v=20160523" tppabs="http://wenda.wecenter.com/static/js/jquery.2.js?v=20160523" type="text/javascript"></script>
+<script src="../static/js/jquery.form.js-v=20160523" tppabs="http://wenda.wecenter.com/static/js/jquery.form.js?v=20160523" type="text/javascript"></script>
+<script src="../static/js/plug_module/plug-in_module.js-v=20160523" tppabs="http://wenda.wecenter.com/static/js/plug_module/plug-in_module.js?v=20160523" type="text/javascript"></script>
+<script src="../static/js/aws.js-v=20160523" tppabs="http://wenda.wecenter.com/static/js/aws.js?v=20160523" type="text/javascript"></script>
+<script src="../static/js/aw_template.js-v=20160523" tppabs="http://wenda.wecenter.com/static/js/aw_template.js?v=20160523" type="text/javascript"></script>
+<script src="../static/js/app.js-v=20160523" tppabs="http://wenda.wecenter.com/static/js/app.js?v=20160523" type="text/javascript"></script>
+<script src="../static/js/editor/ckeditor/ckeditor.js-v=20160523" tppabs="http://wenda.wecenter.com/static/js/editor/ckeditor/ckeditor.js?v=20160523" type="text/javascript"></script>
+<script src="../static/js/editor/ckeditor/adapters/jquery.js-v=20160523" tppabs="http://wenda.wecenter.com/static/js/editor/ckeditor/adapters/jquery.js?v=20160523" type="text/javascript"></script>
+<script type="text/javascript" src="../static/js/compatibility.js" tppabs="http://wenda.wecenter.com/static/js/compatibility.js"></script>
+<!--[if lte IE 8]>
+	<script type="text/javascript" src="../static/js/respond.js" tppabs="http://wenda.wecenter.com/static/js/respond.js"></script>
+<![endif]-->
+</head>
+<noscript unselectable="on" id="noscript">
+    <div class="aw-404 aw-404-wrap container">
+        <img src="../static/common/no-js.jpg" tppabs="http://wenda.wecenter.com/static/common/no-js.jpg">
+        <p>ä½ çš„æµè§ˆå™¨ç¦ç”¨äº†JavaScript, è¯·å¼€å¯ååˆ·æ–°æµè§ˆå™¨è·å¾—æ›´å¥½çš„ä½“éªŒ!</p>
+    </div>
+</noscript>
+<body>
+	<div class="aw-top-menu-wrap">
+		<div class="container">
+			<!-- logo -->
+			<div class="aw-logo hidden-xs">
+				<a href="../index.htm" tppabs="http://wenda.wecenter.com/"></a>
+			</div>
+			<!-- end logo -->
+			<!-- æœç´¢æ¡† -->
+			<div class="aw-search-box  hidden-xs hidden-sm">
+				<form class="navbar-search" action="http://wenda.wecenter.com/search/" id="global_search_form" method="post">
+					<input class="form-control search-query" type="text" placeholder="æœç´¢é—®é¢˜ã€è¯é¢˜æˆ–äºº" autocomplete="off" name="q" id="aw-search-query" />
+					<span title="æœç´¢" id="global_search_btns" onClick="$('#global_search_form').submit();"><i class="icon icon-search"></i></span>
+					<div class="aw-dropdown">
+						<div class="mod-body">
+							<p class="title">è¾“å…¥å…³é”®å­—è¿›è¡Œæœç´¢</p>
+							<ul class="aw-dropdown-list collapse"></ul>
+							<p class="search"><span>æœç´¢:</span><a onClick="$('#global_search_form').submit();"></a></p>
+						</div>
+						<div class="mod-footer">
+							<a href="../account/login/url-L3B1Ymxpc2g=.htm" tppabs="http://wenda.wecenter.com/publish" onClick="$('#header_publish').click();" class="pull-right btn btn-mini btn-success publish">å‘èµ·é—®é¢˜</a>
+						</div>
+					</div>
+				</form>
+			</div>
+			<!-- end æœç´¢æ¡† -->
+			<!-- å¯¼èˆª -->
+			<div class="aw-top-nav navbar">
+				<div class="navbar-header">
+				  <button  class="navbar-toggle pull-left">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				  </button>
+				</div>
+				<nav role="navigation" class="collapse navbar-collapse bs-navbar-collapse">
+				  <ul class="nav navbar-nav">
+										<li><a href="../index.htm" tppabs="http://wenda.wecenter.com/" class=""><i class="icon icon-list"></i> å‘ç°</a></li>
+
+					<!-- <li><a href="http://wenda.wecenter.com/question/" class="active">é—®é¢˜</a></li>
+
+					<li><a href="http://wenda.wecenter.com/article/" class="">æ–‡ç« </a></li> -->
+
+					<li><a href="../topic/index.htm" tppabs="http://wenda.wecenter.com/topic/" ><i class="icon icon-topic"></i> è¯é¢˜</a></li>
+										<li><a href="../help/index.htm" tppabs="http://wenda.wecenter.com/help/"><i class="icon icon-bulb"></i> å¸®åŠ©</a></li>					<li>
+						<a style="font-weight:bold;">Â· Â· Â·</a>
+						<div class="dropdown-list pull-right">
+							<ul id="extensions-nav-list">
+																								<li><a href="../project/index.htm" tppabs="http://wenda.wecenter.com/project/"><i class="icon icon-activity"></i> æ´»åŠ¨</a></li>
+															</ul>
+						</div>
+					</li>
+				  </ul>
+				</nav>
+			</div>
+			<!-- end å¯¼èˆª -->
+			<!-- ç”¨æˆ·æ  -->
+			<div class="aw-user-nav">
+				<!-- ç™»é™†&æ³¨å†Œæ  -->
+									<a class="login btn btn-normal btn-primary" href="../account/login/index.htm" tppabs="http://wenda.wecenter.com/account/login/">ç™»å½•</a>
+					<a class="register btn btn-normal btn-success" href="../account/register/index.htm" tppabs="http://wenda.wecenter.com/account/register/">æ³¨å†Œ</a>								<!-- end ç™»é™†&æ³¨å†Œæ  -->
+			</div>
+			<!-- end ç”¨æˆ·æ  -->
+			<!-- å‘èµ· -->
+						<!-- end å‘èµ· -->
+		</div>
+	</div>
+	
+
+<div class="aw-container-wrap">
+		<div class="container">
+		<div class="row">
+			<div class="aw-content-wrap clearfix">
+				<div class="col-sm-12 col-md-9 aw-main-content">
+					<!-- è¯é¢˜æ¨èbar -->
+										<!-- è¯é¢˜æ¨èbar -->
+					<!-- è¯é¢˜bar -->
+					<div class="aw-mod aw-topic-bar" id="question_topic_editor" data-type="question" data-id="31662">
+						<div class="tag-bar clearfix">
+														<span class="topic-tag" data-id="392">
+								<a href="javascript:if(confirm('http://wenda.wecenter.com/topic/%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://wenda.wecenter.com/topic/%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91'" tppabs="http://wenda.wecenter.com/topic/%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91" class="text">äºŒæ¬¡å¼€å‘</a>
+							</span>
+														
+													</div>
+					</div>
+					<!-- end è¯é¢˜bar -->
+					<div class="aw-mod aw-question-detail aw-item">
+						<div class="mod-head">
+							<h1>
+								C# Winformä¸­æ— ç„¦ç‚¹çŠ¶æ€ä¸‹è·å–é”®ç›˜è¾“å…¥æˆ–è€…USBæ‰«ææªæ•°æ®							</h1>
+
+													</div>
+						<div class="mod-body">
+							<div class="content markitup-box">
+								æœ€è¿‘åœ¨åšä¸ªå›½å¤–å¾ˆç«çš„é¡¹ç›®ï¼Œç¢°åˆ°ä¸€äº›é—®é¢˜ï¼Œä¸‹é¢çš„ä»£ç è€æ˜¯æŠ¥é”™ï¼Œå“ªä½æœ‰ç»éªŒçš„å¤§ç¥å¸®æˆ‘çœ‹çœ‹~<br />
+æ‰«æå™¨æ˜¯ä¼˜åŠ›ç§‘çš„MS3398ä¸‹é¢æ˜¯æ‰«æå™¨çš„å‚æ•°API<br />
+<br />
+<div class="aw-upload-img-list active">
+	<a href="javascript:if(confirm('http://wenda.wecenter.com/uploads/questions/20170606/a88ad0f9985ab3e420c6323f0296f681.png  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://wenda.wecenter.com/uploads/questions/20170606/a88ad0f9985ab3e420c6323f0296f681.png'" tppabs="http://wenda.wecenter.com/uploads/questions/20170606/a88ad0f9985ab3e420c6323f0296f681.png" target="_blank" data-fancybox-group="thumb" rel="lightbox"><img src="../uploads/questions/20170606/a88ad0f9985ab3e420c6323f0296f681.png" tppabs="http://wenda.wecenter.com/uploads/questions/20170606/a88ad0f9985ab3e420c6323f0296f681.png" class="img-polaroid" title="QQæˆªå›¾20170606234650.png" alt="QQæˆªå›¾20170606234650.png" /></a>
+</div>
+<pre><br />
+using System;<br />
+using System.Collections.Generic;<br />
+using System.Linq;<br />
+using System.Runtime.InteropServices;<br />
+using System.Text;<br />
+namespace Common<br />
+{<br />
+   public class BardCodeHooK<br />
+   {<br />
+       public delegate void BardCodeDeletegate(BarCodes barCode);<br />
+       public event BardCodeDeletegate BarCodeEvent;<br />
+       public struct BarCodes<br />
+       {<br />
+           public int VirtKey;//è™šæ‹Ÿå—<br />
+           public int ScanCode;//æ‰«æç <br />
+           public string KeyName;//é”®å<br />
+           public uint Ascll;//Ascll<br />
+           public char Chr;//å­—ç¬¦<br />
+           public string BarCode;//æ¡ç ä¿¡æ¯<br />
+           public bool IsValid;//æ¡ç æ˜¯å¦æœ‰æ•ˆ<br />
+           public DateTime Time;//æ‰«ææ—¶é—´<br />
+       }<br />
+       private struct EventMsg<br />
+       {<br />
+           public int message;<br />
+           public int paramL;<br />
+           public int paramH;<br />
+           public int Time;<br />
+           public int hwnd;<br />
+       }<br />
+       <span>[</span>DllImport(&quot;user32.dll&quot;, CharSet = CharSet.Auto, CallingConvention = CallingConvention.StdCall)]<br />
+       private static extern int SetWindowsHookEx(int idHook, HookProc lpfn, IntPtr hInstance, int threadId);<br />
+       <span>[</span>DllImport(&quot;user32.dll&quot;, CharSet = CharSet.Auto, CallingConvention = CallingConvention.StdCall)]<br />
+       private static extern bool UnhookWindowsHookEx(int idHook);<br />
+       <span>[</span>DllImport(&quot;user32.dll&quot;, CharSet = CharSet.Auto, CallingConvention = CallingConvention.StdCall)]<br />
+       private static extern int CallNextHookEx(int idHook, int nCode, Int32 wParam, IntPtr lParam);<br />
+       <span>[</span>DllImport(&quot;user32&quot;, EntryPoint = &quot;GetKeyNameText&quot;)]<br />
+       private static extern int GetKeyNameText(int IParam, StringBuilder lpBuffer, int nSize);<br />
+       <span>[</span>DllImport(&quot;user32&quot;, EntryPoint = &quot;GetKeyboardState&quot;)]<br />
+       private static extern int GetKeyboardState(byte<span>[</span>] pbKeyState);<br />
+       <span>[</span>DllImport(&quot;user32&quot;, EntryPoint = &quot;ToAscii&quot;)]<br />
+       private static extern bool ToAscii(int VirtualKey, int ScanCode, byte<span>[</span>] lpKeySate, ref uint lpChar, int uFlags);<br />
+       delegate int HookProc(int nCode, Int32 wParam, IntPtr lParam);<br />
+       BarCodes barCode = new BarCodes();<br />
+       int hKeyboardHook = 0;<br />
+       string strBarCode = &quot;&quot;;<br />
+       private int KeyboardHookProc(int nCode, Int32 wParam, IntPtr lParam)<br />
+       {<br />
+           if (nCode == 0)<br />
+           {<br />
+               EventMsg msg = (EventMsg)Marshal.PtrToStructure(lParam, typeof(EventMsg));<br />
+               if (wParam == 0x100)//WM_KEYDOWN=0x100<br />
+               {<br />
+                   barCode.VirtKey = msg.message &amp; 0xff;//è™šæ‹Ÿå—<br />
+                   barCode.ScanCode = msg.paramL &amp; 0xff;//æ‰«æç <br />
+                   StringBuilder strKeyName = new StringBuilder(225);<br />
+                   if (GetKeyNameText(barCode.ScanCode * 65536, strKeyName, 255) &gt; 0)<br />
+                   {<br />
+                       barCode.KeyName = strKeyName.ToString().Trim(new char<span>[</span>] { ' ', '\0' });<br />
+                   }<br />
+                   else<br />
+                   {<br />
+                       barCode.KeyName = &quot;&quot;;<br />
+                   }<br />
+                   byte<span>[</span>] kbArray = new byte<span>[</span>256];<br />
+                   uint uKey = 0;<br />
+                   GetKeyboardState(kbArray);<br />
+                   if (ToAscii(barCode.VirtKey, barCode.ScanCode, kbArray, ref uKey, 0))<br />
+                   {<br />
+                       barCode.Ascll = uKey;<br />
+                       barCode.Chr = Convert.ToChar(uKey);<br />
+                   }<br />
+                   TimeSpan ts = DateTime.Now.Subtract(barCode.Time);<br />
+                   if (ts.TotalMilliseconds &gt; 50)<br />
+                   {<br />
+                       strBarCode = barCode.Chr.ToString();<br />
+                   }<br />
+                   else<br />
+                   {<br />
+                       if ((msg.message &amp; 0xff) == 13 &amp;&amp; strBarCode.Length &gt; 3)<br />
+                       {<br />
+                           barCode.BarCode = strBarCode;<br />
+                           barCode.IsValid = true;<br />
+                        }<br />
+                        strBarCode += barCode.Chr.ToString();<br />
+                    }<br />
+                    barCode.Time = DateTime.Now;<br />
+                    if (BarCodeEvent != null) BarCodeEvent(barCode);//è§¦å‘äº‹ä»¶<br />
+                    barCode.IsValid = false;<br />
+                }<br />
+            }<br />
+            return CallNextHookEx(hKeyboardHook, nCode, wParam, lParam);<br />
+        }<br />
+        //å®‰è£…é’©å­<br />
+        public bool Start()<br />
+        {<br />
+            if (hKeyboardHook == 0)<br />
+            {<br />
+                //WH_KEYBOARD_LL=13<br />
+                hKeyboardHook = SetWindowsHookEx(13, new HookProc(KeyboardHookProc), Marshal.GetHINSTANCE(Assembly.GetExecutingAssembly().GetModules()<span>[</span>0]), 0);<br />
+            }<br />
+            return (hKeyboardHook != 0);<br />
+        }<br />
+        //å¸è½½é’©å­<br />
+        public bool Stop()<br />
+        {<br />
+            if (hKeyboardHook != 0)<br />
+            {<br />
+                return UnhookWindowsHookEx(hKeyboardHook);<br />
+            }<br />
+            return true;<br />
+        }<br />
+    }<br />
+}<br />
+é¡µé¢ä¸­ç”¨æ³•ï¼š<br />
+using System;<br />
+using System.Collections.Generic;<br />
+using System.ComponentModel;<br />
+using System.Data;<br />
+using System.Drawing;<br />
+using System.Text;<br />
+using System.Windows.Forms;<br />
+namespace Common<br />
+{<br />
+    public partial class FrmMain : Form<br />
+    {<br />
+        BardCodeHooK BarCode = new BardCodeHooK();<br />
+        public FrmMain()<br />
+        {<br />
+            InitializeComponent();<br />
+            BarCode.BarCodeEvent += new BardCodeHooK.BardCodeDeletegate(BarCode_BarCodeEvent);<br />
+        }<br />
+        private delegate void ShowInfoDelegate(BardCodeHooK.BarCodes barCode);<br />
+        private void ShowInfo(BardCodeHooK.BarCodes barCode)<br />
+        {<br />
+            if (this.InvokeRequired)<br />
+            {<br />
+                this.BeginInvoke(new ShowInfoDelegate(ShowInfo), new object<span>[</span>] { barCode });<br />
+            }<br />
+            else<br />
+            {<br />
+                textBox1.Text = barCode.KeyName;<br />
+                textBox2.Text = barCode.VirtKey.ToString();<br />
+                textBox3.Text = barCode.ScanCode.ToString();<br />
+                textBox4.Text = barCode.Ascll.ToString();<br />
+                textBox5.Text = barCode.Chr.ToString();<br />
+                textBox6.Text = barCode.IsValid? barCode.BarCode : &quot;&quot;;//æ˜¯å¦ä¸ºæ‰«ææªè¾“å…¥ï¼Œå¦‚æœä¸ºtrueåˆ™æ˜¯ å¦åˆ™ä¸ºé”®ç›˜è¾“å…¥<br />
+                textBox7.Text += barCode.KeyName;<br />
+                //MessageBox.Show(barCode.IsValid.ToString());<br />
+            }<br />
+        }<br />
+        //C#ä¸­åˆ¤æ–­æ‰«ææªè¾“å…¥ä¸é”®ç›˜è¾“å…¥<br />
+        //Private DateTime _dt = DateTime.Now;  //å®šä¹‰ä¸€ä¸ªæˆå‘˜å‡½æ•°ç”¨äºä¿å­˜æ¯æ¬¡çš„æ—¶é—´ç‚¹<br />
+        //private void textBox1_KeyPress(object sender, KeyPressEventArgs e)<br />
+        //{<br />
+        //    DateTime tempDt = DateTime.Now;          //ä¿å­˜æŒ‰é”®æŒ‰ä¸‹æ—¶åˆ»çš„æ—¶é—´ç‚¹<br />
+        //    TimeSpan ts = tempDt .Subtract(_dt);     //è·å–æ—¶é—´é—´éš”<br />
+        //    if (ts.Milliseconds &gt; 50)                           //åˆ¤æ–­æ—¶é—´é—´éš”ï¼Œå¦‚æœæ—¶é—´é—´éš”å¤§äº50æ¯«ç§’ï¼Œåˆ™å°†TextBoxæ¸…ç©º<br />
+        //        textBox1.Text = &quot;&quot;;<br />
+        //    dt = tempDt ;<br />
+        //}<br />
+        void BarCode_BarCodeEvent(BardCodeHooK.BarCodes barCode)<br />
+        {<br />
+            ShowInfo(barCode);<br />
+        }<br />
+        private void FrmMain_Load(object sender, EventArgs e)<br />
+        {<br />
+            BarCode.Start();<br />
+        }<br />
+        private void FrmMain_FormClosed(object sender, FormClosedEventArgs e)<br />
+        {<br />
+            BarCode.Stop();<br />
+        }<br />
+        private void textBox6_TextChanged(object sender, EventArgs e)<br />
+        {<br />
+            if (textBox6.Text.Length &gt; 0)<br />
+            {<br />
+                MessageBox.Show(&quot;æ¡ç é•¿åº¦ï¼š&quot; + textBox6.Text.Length + &quot;\næ¡ç å†…å®¹ï¼š&quot; + textBox6.Text, &quot;ç³»ç»Ÿæç¤º&quot;);<br />
+            }<br />
+        }<br />
+    }<br />
+}</pre>
+																<div class="aw-upload-img-list">
+																																</div>
+															</div>
+														<div class="aw-mod aw-upload-file-list">
+								<!-- <div class="mod-head">
+									<h3><i class="icon icon-attach"></i> é™„ä»¶ :</h3>
+								</div> -->
+								<div class="mod-body">
+									<ul>
+																																							</ul>
+								</div>
+							</div>
+																				</div>
+						<div class="mod-footer">
+							<div class="meta">
+								<span class="text-color-999">4 å¤©å‰</span>
+
+								<a data-id="31662" data-type="question" class="aw-add-comment text-color-999 active" data-comment-count="2" data-first-click=""><i class="icon icon-comment"></i>2 æ¡è¯„è®º</a>
+
+								
+																
+																<div class="pull-right more-operate">
+									
+									<!-- <a class="text-color-999"  onclick="AWS.dialog('shareOut', {item_type:'question', item_id:31662});"> -->
+									<a class="text-color-999 dropdown-toggle" data-toggle="dropdown">
+										<i class="icon icon-share"></i>åˆ†äº«									</a>
+									<div aria-labelledby="dropdownMenu" role="menu" class="aw-dropdown shareout pull-right">
+										<ul class="aw-dropdown-list">
+											<li><a onclick="AWS.User.share_out({webid: 'tsina', content: $(this).parents('.aw-question-detail').find('.markitup-box')});"><i class="icon icon-weibo"></i> å¾®åš</a></li>
+											<li><a onclick="AWS.User.share_out({webid: 'qzone', content: $(this).parents('.aw-question-detail')});"><i class="icon icon-qzone"></i> QZONE</a></li>
+											<li><a onclick="AWS.User.share_out({webid: 'weixin', content: $(this).parents('.aw-question-detail')});"><i class="icon icon-wechat"></i> å¾®ä¿¡</a></li>
+										</ul>
+									</div>
+
+																	</div>
+							</div>
+						</div>
+						<!-- ç«™å†…é‚€è¯· -->
+						<div class="aw-invite-box collapse">
+							<div class="mod-head clearfix">
+								<div class="search-box pull-left">
+									<input id="invite-input" class="form-control" type="text"  placeholder="æœç´¢ä½ æƒ³é‚€è¯·çš„äºº..."/>
+									<div class="aw-dropdown">
+										<p class="title">æ²¡æœ‰æ‰¾åˆ°ç›¸å…³ç»“æœ</p>
+										<ul class="aw-dropdown-list"></ul>
+									</div>
+									<i class="icon icon-search"></i>
+								</div>
+								<div class="invite-list pull-left collapse">
+									å·²é‚€è¯·:
+																	</div>
+							</div>
+													</div>
+						<!-- end ç«™å†…é‚€è¯· -->
+						<!-- ç›¸å…³é“¾æ¥ -->
+						<div class="aw-question-related-box collapse">
+							<form action="http://wenda.wecenter.com/publish/ajax/save_related_link/" method="post" onsubmit="return false" id="related_link_form">
+								<div class="mod-head">
+									<h2>ä¸å†…å®¹ç›¸å…³çš„é“¾æ¥</h2>
+								</div>
+								<div class="mod-body clearfix">
+									<input type="hidden" name="item_id" value="31662" />
+									<input type="text" class="form-control pull-left" name="link" value="" />
+
+									<a onclick="AWS.ajax_post($('#related_link_form'));" class="pull-left btn btn-success">æäº¤</a>
+								</div>
+							</form>
+						</div>
+						<!-- end ç›¸å…³é“¾æ¥ -->
+					</div>
+
+										<div class="aw-mod aw-question-comment">
+						<div class="mod-head">
+							<ul class="nav nav-tabs aw-nav-tabs active">
+								
+								<h2 class="hidden-xs">0 ä¸ªå›å¤</h2>
+							</ul>
+						</div>
+						<div class="mod-body aw-feed-list">
+													</div>
+						<div class="mod-footer">
+															<div class="aw-load-more-content collapse" id="load_uninterested_answers">
+									<span class="text-color-999 aw-alert-box text-color-999" href="javascript:;" tabindex="-1" onclick="AWS.alert('è¢«æŠ˜å çš„å›å¤æ˜¯è¢«ä½ æˆ–è€…è¢«å¤§å¤šæ•°ç”¨æˆ·è®¤ä¸ºæ²¡æœ‰å¸®åŠ©çš„å›å¤');">ä¸ºä»€ä¹ˆè¢«æŠ˜å ?</span>
+									<a href="javascript:;" class="aw-load-more-content"><span class="hide_answers_count">0</span> ä¸ªå›å¤è¢«æŠ˜å </a>
+								</div>
+
+								<div class="collapse aw-feed-list" id="uninterested_answers_list"></div>
+													</div>
+
+											</div>
+										<!-- end é—®é¢˜è¯¦ç»†æ¨¡å— -->
+
+										<!-- å›å¤ç¼–è¾‘å™¨ -->
+					<div class="aw-mod aw-replay-box question">
+						<a name="answer_form"></a>
+												<p align="center">è¦å›å¤é—®é¢˜è¯·å…ˆ<a href="../account/login/index.htm" tppabs="http://wenda.wecenter.com/account/login/">ç™»å½•</a>æˆ–<a href="../account/register/index.htm" tppabs="http://wenda.wecenter.com/account/register/">æ³¨å†Œ</a></p>
+											</div>
+					<!-- end å›å¤ç¼–è¾‘å™¨ -->
+									</div>
+				<!-- ä¾§è¾¹æ  -->
+				<div class="col-md-3 aw-side-bar hidden-xs hidden-sm">
+					<!-- å‘èµ·äºº -->
+										<!-- end å‘èµ·äºº -->
+
+					
+					
+										<!-- ç›¸å…³é—®é¢˜ -->
+					<div class="aw-mod">
+						<div class="mod-head">
+							<h3>ç›¸å…³é—®é¢˜</h3>
+						</div>
+						<div class="mod-body font-size-12">
+							<ul>
+																<li><a href="javascript:if(confirm('http://wenda.wecenter.com/question/1497  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://wenda.wecenter.com/question/1497'" tppabs="http://wenda.wecenter.com/question/1497">å…¶å®æˆ‘å¾ˆæƒ³çŸ¥é“è°èµåŒäº†æˆ‘ï¼Œè°æ„Ÿè°¢äº†æˆ‘ï¼Œå®˜æ–¹èƒ½ä¸ºæˆ‘æåˆ†æ•°æ®å—ï¼Ÿä¸ºä»€ä¹ˆæ„Ÿè°¢æˆ‘ï¼Ÿ</a></li>
+																<li><a href="javascript:if(confirm('http://wenda.wecenter.com/question/28574  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://wenda.wecenter.com/question/28574'" tppabs="http://wenda.wecenter.com/question/28574">wecenterå…è´¹é‡‡é›†æ’ä»¶-è‡ªåŠ¨é‡‡é›†é—®ç­”ç½‘ç«™æ•°æ®å¹¶è‡ªåŠ¨å‘å¸ƒ</a></li>
+																<li><a href="javascript:if(confirm('http://wenda.wecenter.com/question/29954  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://wenda.wecenter.com/question/29954'" tppabs="http://wenda.wecenter.com/question/29954">ã€wecenter å…è´¹é‡‡é›†æ’ä»¶--ç¥ç®­æ‰‹äº‘é‡‡é›† V3.0.3 ã€‘ï¼šå…¨ç½‘æ•°æ®ã€ä¸€é”®é‡‡é›†ã€è‡ªåŠ¨å‘å¸ƒ </a></li>
+																<li><a href="javascript:if(confirm('http://wenda.wecenter.com/question/11258  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://wenda.wecenter.com/question/11258'" tppabs="http://wenda.wecenter.com/question/11258">è°ƒæŸ¥ä¸€ä¸‹ï¼ŒéªŒè¯ç ä½ ä»¬è¦è¾“å…¥å‡ æ¬¡ï¼Ÿ</a></li>
+																<li><a href="javascript:if(confirm('http://wenda.wecenter.com/question/188  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://wenda.wecenter.com/question/188'" tppabs="http://wenda.wecenter.com/question/188">ç½‘ç«™æ•°æ®å’‹å…¨æ²¡å‘¢ï¼Ÿå’‹å›äº‹ï¼Ÿ</a></li>
+																<li><a href="javascript:if(confirm('http://wenda.wecenter.com/question/29108  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://wenda.wecenter.com/question/29108'" tppabs="http://wenda.wecenter.com/question/29108">å¦‚ä½•ä¿®æ”¹å®‰è£…æ–‡ä»¶ï¼Œä½¿å®‰è£…ååå°ç™»å½•ä¸ç”¨è¾“å…¥éªŒè¯ç ï¼Ÿ</a></li>
+																<li><a href="javascript:if(confirm('http://wenda.wecenter.com/question/10970  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://wenda.wecenter.com/question/10970'" tppabs="http://wenda.wecenter.com/question/10970">ä»€ä¹ˆæ—¶å€™å‡ºæ•°æ®å­—å…¸</a></li>
+																<li><a href="javascript:if(confirm('http://wenda.wecenter.com/question/27995  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://wenda.wecenter.com/question/27995'" tppabs="http://wenda.wecenter.com/question/27995">ç™»å½•åå°æ—¶ï¼Œè¾“å…¥ç”¨æˆ·åå’Œå¯†ç ï¼Œç‚¹å‡»ç¡®å®šï¼Œä¸æ˜¯è·³è½¬åˆ°åå°é¦–é¡µï¼Œè€Œæ˜¯è·³è½¬åˆ°å‰å°é¦–é¡µï¼Œè¿™æ˜¯ä»€ä¹ˆé—®é¢˜å•Šï¼Ÿ</a></li>
+																<li><a href="javascript:if(confirm('http://wenda.wecenter.com/question/30162  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://wenda.wecenter.com/question/30162'" tppabs="http://wenda.wecenter.com/question/30162">ä¸ºå•¥æˆ‘è¾“å…¥  åŸŸå/question  ç¨‹åºèµ°çš„æ˜¯  question/main/index_squareæ–¹æ³•è€Œä¸æ˜¯indexæ–¹æ³•ï¼Ÿ</a></li>
+																<li><a href="javascript:if(confirm('http://wenda.wecenter.com/question/22715  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://wenda.wecenter.com/question/22715'" tppabs="http://wenda.wecenter.com/question/22715">æ‰«æäºŒç»´ç åï¼Œé¡µé¢ä¸è·³è½¬ã€‚</a></li>
+																<li><a href="javascript:if(confirm('http://wenda.wecenter.com/question/22869  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://wenda.wecenter.com/question/22869'" tppabs="http://wenda.wecenter.com/question/22869">æˆ‘æƒ³é—®ä¸‹ wcæ˜¯æ€ä¹ˆé“¾æ¥æ•°æ®åº“é‡Œé¢çš„æŸå¼ è¡¨  æ“ä½œæ•°æ®åº“çš„è¡¨çš„  è¯·è¯´ä¸‹è¯¦ç»†çš„æ–‡ä»¶ æœ€å¥½èƒ½ä¸¾ä¸ªä¾‹å­</a></li>
+															</ul>
+						</div>
+					</div>
+					<!-- end ç›¸å…³é—®é¢˜ -->
+					
+					<!-- é—®é¢˜çŠ¶æ€ -->
+					<div class="aw-mod question-status">
+						<div class="mod-head">
+							<h3>é—®é¢˜çŠ¶æ€</h3>
+						</div>
+						<div class="mod-body">
+							<ul>
+								<li>æœ€æ–°æ´»åŠ¨: <span class="aw-text-color-blue">4 å¤©å‰</span></li>
+								<li>æµè§ˆ: <span class="aw-text-color-blue">161</span></li>
+								<li>å…³æ³¨: <span class="aw-text-color-blue">2</span> äºº</li>
+
+								<li class="aw-border-radius-5" id="focus_users"></li>
+							</ul>
+						</div>
+					</div>
+					<!-- end é—®é¢˜çŠ¶æ€ -->
+				</div>
+				<!-- end ä¾§è¾¹æ  -->
+			</div>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+	var ATTACH_ACCESS_KEY = 'aada1927103ee12f2a025435031dd165';
+	var ITEM_IDS = '';
+	var COMMENT_UNFOLD = '';
+	var QUESTION_ID = 31662;
+	var UNINTERESTED_COUNT = 3;
+	var ANSWER_EDIT_TIME = 640000;
+	var USER_ANSWERED = '0';
+	var UPLOAD_ENABLE = 'N';
+	var ANSWER_TYPE = 'answer';
+</script>
+
+<script type="text/javascript" src="../static/js/app/question_detail.js" tppabs="http://wenda.wecenter.com/static/js/app/question_detail.js"></script>
+
+<div class="aw-footer-wrap">
+	<div class="aw-footer">
+		Copyright Â© 2017<span class="hidden-xs"> - ç²¤ICPå¤‡14054802 å®˜æ–¹QQç¾¤ï¼š493577498 432421687, All Rights Reserved</span>
+
+		<span class="hidden-xs">Powered By <a href="javascript:if(confirm('http://www.wecenter.com/?copyright  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.wecenter.com/?copyright'" tppabs="http://www.wecenter.com/?copyright" target="blank">WeCenter 3.1.9</a></span>
+
+			</div>
+</div>
+
+<a class="aw-back-top hidden-xs" href="javascript:;" onclick="$.scrollTo(1, 600, {queue:true});"><i class="icon icon-up"></i></a>
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "../../hm.baidu.com/hm.js-0bc5084b5b75712f34e8c85baabd465b"/*tpa=http://hm.baidu.com/hm.js?0bc5084b5b75712f34e8c85baabd465b*/;
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<!-- DO NOT REMOVE -->
+<div id="aw-ajax-box" class="aw-ajax-box"></div>
+
+<div style="display:none;" id="__crond">
+	<script type="text/javascript">
+		$(document).ready(function () {
+			$('#__crond').html(unescape('%3Cimg%20src%3D%22' + G_BASE_URL + '/crond/run/1497154108%22%20width%3D%221%22%20height%3D%221%22%20/%3E'));
+		});
+	</script>
+</div>
+
+<!-- Escape time: 0.047881841659546 --><!-- / DO NOT REMOVE -->
+
+</body>
+</html>

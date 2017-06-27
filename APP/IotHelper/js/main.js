@@ -54,7 +54,7 @@ function connect(ip, port) {
 	};
 	ws.onerror = function() {
 
-		alert("谁知道哪里错误！");
+	//	alert("谁知道哪里错误！");
 	};
 }
 

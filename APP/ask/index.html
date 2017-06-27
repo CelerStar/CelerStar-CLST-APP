@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+		<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+		<meta name="renderer" content="webkit" />
+		<title></title>
+		<meta name="keywords" content="知识社区,企业社区,社交问答,问答社区,企业社交,开源社区程序,社交社区程序,开源问答程序,问答网站,social question,微信,微信公众平台,微信开发,微信开发社区,微信应用" />
+		<meta name="description" content="社交化问答社区程序，专注于社区内容的整理、归类和检索，并通过连接微信公众平台，移动APP进行内容分发。" />
+
+		<link rel="stylesheet" type="text/css" href="static/css/bootstrap.css" tppabs="http://wenda.wecenter.com/static/css/bootstrap.css" />
+		<link rel="stylesheet" type="text/css" href="static/css/icon.css" tppabs="http://wenda.wecenter.com/static/css/icon.css" />
+
+		<link href="static/css/default/common.css-v=20160523.css" tppabs="http://wenda.wecenter.com/static/css/default/common.css?v=20160523" rel="stylesheet" type="text/css" />
+		<link href="static/css/default/link.css-v=20160523.css" tppabs="http://wenda.wecenter.com/static/css/default/link.css?v=20160523" rel="stylesheet" type="text/css" />
+		<link href="static/js/plug_module/style.css-v=20160523.css" tppabs="http://wenda.wecenter.com/static/js/plug_module/style.css?v=20160523" rel="stylesheet" type="text/css" />
+		<script src="js/jquery-2.1.0.js" type="text/javascript" charset="utf-8"></script>
+		<!--[if lte IE 8]>
+	<script type="text/javascript" src="static/js/respond.js" tppabs="http://wenda.wecenter.com/static/js/respond.js"></script>
+<![endif]-->
+	</head>
+	<noscript unselectable="on" id="noscript">
+    <div class="aw-404 aw-404-wrap container">
+        <img src="static/common/no-js.jpg" tppabs="http://wenda.wecenter.com/static/common/no-js.jpg">
+        <p>你的浏览器禁用了JavaScript, 请开启后刷新浏览器获得更好的体验!</p>
+    </div>
+</noscript>
+
+	<body>
+
+			
+		<div class="aw-top-menu-wrap">
+							<!-- logo -->
+				<span class="aw-logo hidden-xs">
+					<a onclick=" location.reload() " style="color: #FFFFFF; font-size: 24px; margin-left: 20px; " id="NavName"></a>
+				</span>
+			<div class="container">
+	
+				<!-- end logo -->
+				<!-- 搜索框 -->
+				<div class="aw-search-box  hidden-xs hidden-sm" style="margin-left: 10px; display: none;">
+					<div class="navbar-search"  id="global_search_form" method="post" ">
+						<input class="form-control search-query" type="text" placeholder="搜索问题" autocomplete="off" name="q" id="aw-search-query" />
+						<span title="搜索" id="global_search_btns" onClick=""><i class="icon icon-search"></i></span>
+	
+					</div>
+				</div>
+				<!-- end 搜索框 -->
+				<!-- 导航 -->
+				<div class="aw-top-nav navbar">
+					<div class="navbar-header">
+				<button class="navbar-toggle pull-left" id="navMainBtn">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				  </button>
+					</div>
+					<nav role="" class="collapse navbar-collapse bs-navbar-collapse" id="navMainNav">
+						<ul class="nav navbar-nav" id="qrcodeInfoId_list">
+						</ul>
+	
+					</nav>
+				</div>
+		
+				<div class="aw-user-nav" id="logregBtn" >
+			
+					<a class="login btn btn-normal btn-primary" href="https://www.celerstar.com/MVC/Views/Authenticate/page_login.php" >登录</a>
+					<a class="register btn btn-normal btn-success" href="https://www.celerstar.com/MVC/Views/Authenticate/page_register.php" >注册</a>
+	
+				</div>
+	
+				<div style="">
+				
+				    
+				    
+					<div class="aw-user-nav" id="usrBtn" style="display: none;">
+						<!-- 登陆&注册栏 -->
+						<a  class="aw-user-nav-dropdown">
+							<img  src="static/common/avatar-max-img.png">
+					
+						</a>
+						<div class="aw-dropdown dropdown-list pull-right">
+							<ul class="aw-dropdown-list">
+	
+								<li>
+									<a id="exitBtn" ><i class="icon icon-logout"></i> 退出</a>
+								</li>
+							</ul>
+						</div>
+						<!-- end 登陆&注册栏 -->
+			        </div>
+					
+						<div class="aw-publish-btn " id="askBtn"   style="display: none;">
+						<a id="header_publish " class="btn-primary "><i class="icon icon-ask "></i>发起</a>
+				    </div>
+				</div>
+	
+			    
+			</div>
+		</div>
+
+	<div id="main" style="">
+
+	
+			<div class="aw-container-wrap">
+	
+				<div class="container">
+					<div class="row">
+						<div class="aw-content-wrap clearfix">
+							<div class="col-sm-12 col-md-9 aw-main-content">
+	
+								<!-- end 新消息通知 -->
+								<!-- tab切换 -->
+								<ul class="nav nav-tabs aw-nav-tabs active ">
+									<li style="display: none;">
+										<a href="" tppabs="http://wenda.wecenter.com/sort_type-unresponsive">等待回复</a>
+									</li>
+									<li style="display: none;">
+										<a href="" tppabs="http://wenda.wecenter.com/sort_type-hot__day-7" id="sort_control_hot">热门</a>
+									</li>
+									<li style="display: none;">
+										<a href="" tppabs="http://wenda.wecenter.com/is_recommend-1">推荐</a>
+									</li>
+									<li class="active">
+										<a tppabs="">最新</a>
+									</li>
+	
+									<h2 class="" ><i class="icon icon-list" ></i><span id="navTitle"></span></h2>
+								</ul>
+								<!-- end tab切换 -->
+	
+								<div class="aw-mod aw-explore-list">
+									<div class="mod-body" id="qrcodeDatasInfo_list">
+										
+									</div>
+									<div class="mod-footer" style="display: none;">
+										<div class="page-control">
+											<ul class="pagination pull-right">
+												<li class="active">
+													<a href="javascript:;">1</a>
+												</li>
+												<li>
+													<a href="javascript:if(confirm(''))window.location='http://wenda.wecenter.com/sort_type-new__day-0__is_recommend-0__page-2'" tppabs="http://wenda.wecenter.com/sort_type-new__day-0__is_recommend-0__page-2">2</a>
+												</li>
+												<li>
+													<a href="javascript:if(confirm(''))window.location='http://wenda.wecenter.com/sort_type-new__day-0__is_recommend-0__page-3'" tppabs="http://wenda.wecenter.com/sort_type-new__day-0__is_recommend-0__page-3">3</a>
+												</li>
+												<li>
+													<a href="javascript:if(confirm(''))window.location='http://wenda.wecenter.com/sort_type-new__day-0__is_recommend-0__page-4'" tppabs="http://wenda.wecenter.com/sort_type-new__day-0__is_recommend-0__page-4">4</a>
+												</li>
+												<li>
+													<a href="javascript:if(confirm(''))window.location='http://wenda.wecenter.com/sort_type-new__day-0__is_recommend-0__page-2'" tppabs="http://wenda.wecenter.com/sort_type-new__day-0__is_recommend-0__page-2">&gt;</a>
+												</li>
+												<li>
+													<a href="javascript:if(confirm(''))window.location='http://wenda.wecenter.com/sort_type-new__day-0__is_recommend-0__page-1778'" tppabs="http://wenda.wecenter.com/sort_type-new__day-0__is_recommend-0__page-1778">&gt;&gt;</a>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+	
+							<!-- 侧边栏 -->
+							<div class="col-sm-12 col-md-3 aw-side-bar hidden-xs hidden-sm">
+								<div class="aw-mod aw-text-align-justify">
+									<div class="mod-head">
+										<a href="topic/channel-hot.htm" style="display: none;" tppabs="http://wenda.wecenter.com/topic/channel-hot" class="pull-right">更多 &gt;</a>
+										<h3>热门关键词</h3>
+									</div>
+									<div class="mod-body" style="display: none;">
+										<dl>
+											<dt class="pull-left aw-border-radius-5">
+						<a href="topic/二次开发.htm" tppabs="http://wenda.wecenter.com/topic/二次开发"><img alt="" src="static/common/topic-mid-img.png" tppabs="http://wenda.wecenter.com/static/common/topic-mid-img.png" /></a>
+					</dt>
+											<dd class="pull-left">
+												<p class="clearfix">
+													<span class="topic-tag">
+								<a href="topic/二次开发.htm" tppabs="http://wenda.wecenter.com/topic/二次开发" class="text" data-id="392">二次开发</a>
+							</span>
+												</p>
+												<p><b>467</b> 个问题, <b>109</b> 人关注</p>
+											</dd>
+										</dl>
+	
+									</div>
+								</div>
+								<div class="aw-mod aw-text-align-justify">
+									<div class="mod-head">
+										<a href="people/index.htm" style="display: none;" tppabs="http://wenda.wecenter.com/people/" class="pull-right">更多 &gt;</a>
+										<h3>热门用户</h3>
+									</div>
+									<div class="mod-body" style="display: none;">
+	
+										<dl>
+											<dt class="pull-left aw-border-radius-5">
+					<a href="javascript:if(confirm(''))window.location=''" tppabs=""><img alt="" src="" tppabs="" /></a>
+				</dt>
+											<dd class="pull-left">
+												<a href="javascript:if(confirm(''))window.location='http://wenda.wecenter.com/people/net'" tppabs="http://wenda.wecenter.com/people/net" data-id="21493" class="aw-user-name">net </a>
+												<p class="signature"></p>
+												<p><b>44</b> 个问题, <b>22</b> 次赞同</p>
+											</dd>
+										</dl>
+	
+									</div>
+								</div>
+							</div>
+							<!-- end 侧边栏 -->
+						</div>
+					</div>
+				</div>
+			</div>
+	
+
+
+		</div>
+
+         <div id="ask" style="display: none;">
+			<div class="aw-container-wrap">
+				<div class="container aw-publish">
+					<div class="row">
+						<div class="aw-content-wrap clearfix">
+							<div class="col-sm-12 col-md-9 aw-main-content">
+								<!-- tab 切换 -->
+								<ul class="nav nav-tabs aw-nav-tabs active">
+									<li class="active">
+										<a >问题</a>
+									</li>
+									<h2 class="hidden-xs"><i class="icon icon-ask"></i> 发起</h2>
+								</ul>
+								<!-- end tab 切换 -->
+								<div >
+									<input type="hidden" name="post_hash" value="0385319b5b41a93faa6642d01425887b">
+									<input type="hidden" name="attach_access_key" value="c841ba15d75b7dca52b9a0ba7f5a6552">
+									<input type="hidden" name="question_id" id="question_id" value="">
+									<input type="hidden" name="ask_user_id" value="">
+									<div class="aw-mod aw-mod-publish">
+										<div class="mod-body">
+											<h3>问题标题:</h3>
+											<!-- 问题标题 -->
+											<div class="aw-publish-title active">
+												<div>
+													<input type="text" placeholder="问题标题"  id="qrcodeTitle" value="" class="form-control">
+												
+												</div>
+											</div>
+											<!-- end 问题标题 -->
+
+											<h3>问题关键词:</h3>
+											<div class="aw-topic-bar active" data-type="publish">
+												<div class="tag-bar clearfix">
+			
+													<input type="text" placeholder="问题关键词"  id="qrcodeType" value="" class="form-control">
+			
+												</div>
+
+											</div>
+										</div>
+										<div class="mod-footer clearfix">
+											
+															
+														</span>
+											<a class="btn btn-large btn-success btn-publish-submit" id="publish_submit" >确认发起</a>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- 侧边栏 -->
+							<div class="col-sm-12 col-md-3 aw-side-bar hidden-xs">
+								<!-- 问题发起指南 -->
+								<div class="aw-mod publish-help">
+									<div class="mod-head">
+										<h3>问题发起指南</h3>
+									</div>
+									<div class="mod-body">
+										<p><b>• 问题标题:</b> 请用准确的语言描述您发布的问题思想</p>
+										<p><b>• 问题关键词:</b> 补充您的问题内容关键词</p>
+									
+									
+									</div>
+								</div>
+								<!-- end 问题发起指南 -->
+							</div>
+							<!-- end 侧边栏 -->
+						</div>
+					</div>
+				</div>
+			</div>
+         </div>
+
+         <div id="askCon" style="display: none;">
+         	
+         	 <img src="static/timg.png" id="promptBtn" style="position: fixed; z-index: 999; width: 40px; top: 60px; left: 10px;" alt="返回">
+			<div class="aw-container-wrap">
+				<div class="container">
+					<div class="row">
+						<div class="aw-content-wrap clearfix">
+							<div class="col-sm-12 col-md-9 aw-main-content">
+								<!-- 话题推荐bar -->
+								<!-- 话题推荐bar -->
+								<!-- 话题bar -->
+								<div class="aw-mod aw-topic-bar" id="question_topic_editor" data-type="question" >
+									<div class="tag-bar clearfix">
+										<span class="topic-tag" data-id="3778">
+											<a class="text" id="askType">无关键词</a>
+										</span>
+			
+									</div>
+								</div>
+								<!-- end 话题bar -->
+								<div class="aw-mod aw-question-detail aw-item">
+									<div class="mod-head">
+										<h1 id="askTitle">
+											未知问题					
+										</h1>
+			
+
+									</div>
+						
+									<div class="mod-footer" style="display: none;">
+										<div class="meta">
+											<span class="text-color-999">8 小时前</span>
+			
+											<a data-id="31664" data-type="question" class="aw-add-comment text-color-999 " data-comment-count="0" data-first-click="hide"><i class="icon icon-comment"></i>添加评论</a>
+			
+											<a class="text-color-999 aw-invite-replay"><i class="icon icon-invite"></i>邀请 </a>
+			
+											<a class="text-color-999" href="http://wenda.wecenter.com/publish/31664"><i class="icon icon-edit"></i>编辑</a>
+
+										</div>
+									</div>
+			
+				
+								</div>
+			
+								<div class="aw-mod aw-question-comment">
+									<div class="mod-head" style="display: none;">
+										<ul class="nav nav-tabs aw-nav-tabs active">
+											<li>
+												<a href="http://wenda.wecenter.com/question/31664?uid=focus">关注的人</a>
+											</li>
+											<li>
+												<a href="http://wenda.wecenter.com/question/31664?sort_key=add_time&amp;sort=ASC">时间 <i class="icon icon-up"></i></a>
+											</li>
+											<li class="active">
+												<a href="http://wenda.wecenter.com/question/31664&amp;sort_key=agree_count&amp;sort=DESC">票数</a>
+											</li>
+			
+											<h2 class="hidden-xs">1 个回复</h2>
+										</ul>
+									</div>
+									<div class="mod-body aw-feed-list" id="reful_list">
+										
+										
+									</div>
+									<div class="mod-footer">
+										<div class="aw-load-more-content collapse" id="load_uninterested_answers">
+											<span class="text-color-999 aw-alert-box text-color-999" href="javascript:;" tabindex="-1" onclick="">为什么被折叠?</span>
+											<a href="javascript:;" class="aw-load-more-content"><span class="hide_answers_count">0</span> 个回复被折叠</a>
+										</div>
+			
+										<div class="collapse aw-feed-list" id="uninterested_answers_list"></div>
+									</div>
+			
+								</div>
+								<!-- end 问题详细模块 -->
+			
+								<!-- 回复编辑器 -->
+								<div class="aw-mod aw-replay-box question">
+									<a name="answer_form"></a>
+									<div class="question_answer_form">
+							
+										<div class="mod-body">
+											<div class="aw-mod aw-editor-box">
+											<h3>回复</h3>
+											<div class="aw-topic-bar active" data-type="publish">
+												<div class="tag-bar clearfix" >
+	
+													<textarea name="" rows="6" id="replyCont" cols=""  style="background: #EEEEEE; width: 100%; resize: none;"></textarea>
+												</div>
+
+											</div>
+												<div class="mod-body clearfix">
+													<a  class="btn btn-normal btn-success pull-right btn-reply" id="replyBtn">回复</a>
+									
+												</div>
+											</div>
+			
+										</div>
+									</div>
+								</div>
+								<!-- end 回复编辑器 -->
+							</div>
+							<!-- 侧边栏 -->
+							<div class="col-md-3 aw-side-bar hidden-xs hidden-sm">
+								<!-- 发起人 -->
+								<div class="aw-mod">
+									<div class="mod-head">
+										<h3>发起人</h3>
+									</div>
+									<div class="mod-body">
+										<dl>
+											<dt class="pull-left aw-border-radius-5">
+												<a ><img alt="wangncet" src="static/common/avatar-max-img.png"></a>
+											</dt>
+											<dd class="pull-left">
+												<a class="aw-user-name" id="askName" >匿名</a>
+												
+												<p style="display: none;">80后IT男</p>
+											</dd>
+										</dl>
+									</div>
+								</div>
+								<!-- end 发起人 -->
+			
+								<!-- 邀请别人回复 -->
+								<div class="aw-mod email-invite-replay" style="display: none;">
+									<div class="mod-head">
+										<h3>邮件邀请别人回复</h3>
+									</div>
+									<div class="mod-body clearfix">
+										<!-- 侧边栏邀请box -->
+										<form method="post" action="http://wenda.wecenter.com/question/ajax/email_invite/question_id-31664" onsubmit="return false;" id="email_invite_form">
+											<input class="form-control" type="text" name="email" placeholder="邮件邀请回复...">
+											<a class="pull-right btn btn-mini btn-success" onclick="">邀请</a>
+										</form>
+										<!-- end 侧边栏邀请box -->
+									</div>
+								</div>
+								<!-- end 邀请别人回复 -->
+			
+								<!-- 相关问题 -->
+								<div class="aw-mod">
+									<div class="mod-head">
+										<h3>相关问题</h3>
+									</div>
+									<div class="mod-body font-size-12">
+										<ul style="display: none;">
+											<li>
+												<a href="http://wenda.wecenter.com/question/8896">一般程序都有缩写，如DZ、PW。大家说说WeCenter的缩写</a>
+											</li>
+
+										</ul>
+									</div>
+								</div>
+								<!-- end 相关问题 -->
+			
+								<!-- 问题状态 -->
+								<div class="aw-mod question-status">
+									<div class="mod-head">
+										<h3>问题状态</h3>
+									</div>
+									<div class="mod-body" style="display: none;">
+										<ul>
+											<li>最新活动: <span class="aw-text-color-blue">5 小时前</span></li>
+											<li>浏览: <span class="aw-text-color-blue">46</span></li>
+											<li>关注: <span class="aw-text-color-blue">2</span> 人</li>
+			
+											<li class="aw-border-radius-5" id="focus_users">
+												<a href="http://wenda.wecenter.com/people/wangncet"><img src="http://wenda.wecenter.com/static/common/avatar-mid-img.png" class="aw-user-name" data-id="5223" alt="wangncet"></a>
+												<a href="http://wenda.wecenter.com/people/onesite"><img src="http://wenda.wecenter.com/uploads/avatar/000/02/00/67_avatar_mid.jpg" class="aw-user-name" data-id="20067" alt="kenw2004"></a>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<!-- end 问题状态 -->
+							</div>
+							<!-- end 侧边栏 -->
+						</div>
+					</div>
+				</div>
+			</div>
+         	
+         </div>
+         
+        
+         	
+			<div class="aw-footer-wrap">
+				<div class="aw-footer">
+					Copyright © 2017<span class="hidden-xs"> - OpenIOE All Rights Reserved</span>
+	
+				</div>
+			</div>
+	</body>
+
+	<script src="js/index.js" type="text/javascript" charset="utf-8"></script>
+
+</html>

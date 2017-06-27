@@ -189,7 +189,8 @@ if(mSensorIotDataTYP == "text") {
 
 				$("#changeTime").html(messageTime);
 
-                $("#textInfo").html(messageInfo);
+                lastInfo =  $("#textInfo").html();
+                $("#textInfo").html(messageInfo  + "\n" + lastInfo);
 			},
 
 			error: function() {

@@ -117,7 +117,7 @@ var inqappInfo = function() {
 				var appUpdateUrl = data["NOTE"]["appUpdateUrl"];
 				var appUpdateEnable = data["NOTE"]["appUpdateEnable"];
 
-				if(appVersionNum > 3 && appUpdateEnable == "ON") {
+				if(appVersionNum > 130 && appUpdateEnable == "ON") {
 					$("#appVersionString").html(appVersionString);
 					$("#appUpdateUrl").attr('href',appUpdateUrl); 
 					$("#updateBtn").removeClass("display");
